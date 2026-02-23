@@ -1,0 +1,60 @@
+{"id": "math_1", "category": "math", "question": "¿Cuál es la suma de 15 y 27?", "ground_truth": "42"}
+{"id": "math_2", "category": "math", "question": "Si un tren viaja a 60 mph durante 2.5 horas, ¿qué distancia recorre?", "ground_truth": "150 millas (240 kilometros)"}
+{"id": "math_3", "category": "math", "question": "Resuelve para x: 3x - 7 = 14", "ground_truth": "x=7"}
+{"id": "math_4", "category": "math", "question": "¿Cuál es la raíz cuadrada de 144?", "ground_truth": "12"}
+{"id": "math_5", "category": "math", "question": "Si una camisa cuesta $20 y tiene un 15% de descuento, ¿cuál es el precio final?", "ground_truth": "$17"}
+{"id": "math_6", "category": "math", "question": "¿Cuál es el área de un rectángulo de longitud 8 y ancho 5?", "ground_truth": "40"}
+{"id": "math_7", "category": "math", "question": "¿Cuántos grados hay en un triángulo?", "ground_truth": "180"}
+{"id": "math_8", "category": "math", "question": "¿Cuánto es 2 elevado a la 5?", "ground_truth": "32"}
+{"id": "math_9", "category": "math", "question": "Si divides 100 entre 4 y le sumas 15, ¿cuál es el resultado?", "ground_truth": "40"}
+{"id": "math_10", "category": "math", "question": "¿Cuál es el perímetro de un hexágono regular con lado de longitud 6?", "ground_truth": "36"}
+{"id": "math_11", "category": "math", "question": "¿Cuál es el 15% de 200?", "ground_truth": "30"}
+{"id": "math_12", "category": "math", "question": "Un panadero hace 4 docenas de galletas. ¿Cuántas galletas son?", "ground_truth": "48"}
+{"id": "math_13", "category": "math", "question": "¿Cuál es el siguiente número en la secuencia: 2, 4, 8, 16, ...?", "ground_truth": "32"}
+{"id": "math_14", "category": "math", "question": "Calcula el volumen de un cubo con lado de longitud 3.", "ground_truth": "27"}
+{"id": "math_15", "category": "math", "question": "Si y = 2x + 3 y x = 4, ¿cuál es y?", "ground_truth": "11"}
+{"id": "math_16", "category": "math", "question": "¿Cuál es el máximo común divisor de 24 y 36?", "ground_truth": "12"}
+{"id": "math_17", "category": "math", "question": "¿Cuántos minutos hay en 3.5 horas?", "ground_truth": "210"}
+{"id": "math_18", "category": "math", "question": "Convierte 5 kilómetros a metros.", "ground_truth": "5000"}
+{"id": "math_19", "category": "math", "question": "¿Cuál es el promedio de 10, 20 y 30?", "ground_truth": "20"}
+{"id": "math_20", "category": "math", "question": "Si una caja contiene 3 bolas rojas y 5 bolas azules, ¿cuál es la probabilidad de sacar una bola roja?", "ground_truth": "3/8"}
+{"id": "factual_1", "category": "factual", "question": "¿Cuál es la capital de Francia?", "ground_truth": "París"}
+{"id": "factual_2", "category": "factual", "question": "¿Quién escribió 'Romeo y Julieta'?", "ground_truth": "William Shakespeare"}
+{"id": "factual_3", "category": "factual", "question": "¿Cuál es el símbolo químico del agua?", "ground_truth": "H2O"}
+{"id": "factual_4", "category": "factual", "question": "¿En qué año se hundió el Titanic?", "ground_truth": "1912"}
+{"id": "factual_5", "category": "factual", "question": "¿Quién fue el primer presidente de los Estados Unidos?", "ground_truth": "George Washington"}
+{"id": "factual_6", "category": "factual", "question": "¿Cuál es el planeta más grande de nuestro sistema solar?", "ground_truth": "Júpiter"}
+{"id": "factual_7", "category": "factual", "question": "¿Cuántos continentes hay en la Tierra?", "ground_truth": "7"}
+{"id": "factual_8", "category": "factual", "question": "¿Cuál es la sustancia natural más dura de la Tierra?", "ground_truth": "Diamante"}
+{"id": "factual_9", "category": "factual", "question": "¿Quién pintó la Mona Lisa?", "ground_truth": "Leonardo da Vinci"}
+{"id": "factual_10", "category": "factual", "question": "¿Qué país es conocido como la Tierra del Sol Naciente?", "ground_truth": "Japón"}
+{"id": "factual_11", "category": "factual", "question": "¿Cuál es la moneda de Japón?", "ground_truth": "Yen"}
+{"id": "factual_12", "category": "factual", "question": "¿Quién descubrió la penicilina?", "ground_truth": "Alexander Fleming"}
+{"id": "factual_13", "category": "factual", "question": "¿Cuál es la montaña más alta del mundo?", "ground_truth": "Monte Everest"}
+{"id": "factual_14", "category": "factual", "question": "¿Qué órgano es responsable de bombear la sangre en el cuerpo humano?", "ground_truth": "Corazón"}
+{"id": "factual_15", "category": "factual", "question": "¿Cuál es el país más pequeño del mundo por superficie terrestre?", "ground_truth": "Ciudad del Vaticano"}
+{"id": "factual_16", "category": "factual", "question": "¿Qué elemento tiene el número atómico 1?", "ground_truth": "Hidrógeno"}
+{"id": "factual_17", "category": "factual", "question": "¿Cuál es el idioma oficial de Brasil?", "ground_truth": "Portugués"}
+{"id": "factual_18", "category": "factual", "question": "¿Quién fue la primera persona en pisar la luna?", "ground_truth": "Neil Armstrong"}
+{"id": "factual_19", "category": "factual", "question": "¿Cuál es el ingrediente principal en el hummus tradicional?", "ground_truth": "Garbanzos"}
+{"id": "factual_20", "category": "factual", "question": "¿En qué ciudad se encuentra el Coliseo?", "ground_truth": "Roma"}
+{"id": "reasoning_1", "category": "reasoning", "question": "Si todos los blips son blops, y algunos blops son blurps, ¿son todos los blips blurps?", "ground_truth": "No"}
+{"id": "reasoning_2", "category": "reasoning", "question": "A es más alto que B, y B es más alto que C. ¿Quién es el más bajo?", "ground_truth": "C es el más bajo"}
+{"id": "reasoning_3", "category": "reasoning", "question": "Si dejas caer una pluma y una bola de boliche en el vacío, ¿cuál toca el suelo primero?", "ground_truth": "Golpean el suelo al mismo tiempo"}
+{"id": "reasoning_4", "category": "reasoning", "question": "Un bate y una pelota cuestan $1.10 en total. El bate cuesta $1.00 más que la pelota. ¿Cuánto cuesta la pelota?", "ground_truth": "La pelota cuesta 5 centavos"}
+{"id": "reasoning_5", "category": "reasoning", "question": "Si 5 máquinas tardan 5 minutos en hacer 5 artefactos, ¿cuánto tiempo tardarían 100 máquinas en hacer 100 artefactos?", "ground_truth": "5 minutos"}
+{"id": "reasoning_6", "category": "reasoning", "question": "En un lago, hay un área de nenúfares. Cada día, el área duplica su tamaño. Si tarda 48 días en cubrir el lago, ¿cuánto tarda en cubrir la mitad?", "ground_truth": "47 días"}
+{"id": "reasoning_7", "category": "reasoning", "question": "Algunos meses tienen 31 días, ¿cuántos tienen 28?", "ground_truth": "Los 12 meses tienen al menos 28 días"}
+{"id": "reasoning_8", "category": "reasoning", "question": "Estás corriendo una carrera y rebasas a la persona en el segundo lugar. ¿En qué lugar estás ahora?", "ground_truth": "Segundo lugar"}
+{"id": "reasoning_9", "category": "reasoning", "question": "El padre de María tiene cinco hijas: 1. Nana, 2. Nene, 3. Nini, 4. Nono. ¿Cuál es el nombre de la quinta hija?", "ground_truth": "María"}
+{"id": "reasoning_10", "category": "reasoning", "question": "Si un gallo pone un huevo en la cima del techo de un granero, ¿hacia dónde rodará?", "ground_truth": "Los gallos no ponen huevos"}
+{"id": "reasoning_11", "category": "reasoning", "question": "¿Cómo puede un hombre pasar ocho días sin dormir?", "ground_truth": "Duerme por la noche"}
+{"id": "reasoning_12", "category": "reasoning", "question": "¿Qué tiene teclas pero no puede abrir cerraduras?", "ground_truth": "Un piano/teclado"}
+{"id": "reasoning_13", "category": "reasoning", "question": "No tengo puertas pero tengo teclas, no tengo habitaciones pero tengo espacio. ¿Qué soy?", "ground_truth": "Un teclado"}
+{"id": "reasoning_14", "category": "reasoning", "question": "Antes de ayer tenía 21 años, y el año que viene tendré 24. ¿Cuándo es mi cumpleaños?", "ground_truth": "31 de diciembre"}
+{"id": "reasoning_15", "category": "reasoning", "question": "Un granjero tiene 17 ovejas y mueren todas menos 9. ¿Cuántas quedan?", "ground_truth": "Quedan 9"}
+{"id": "reasoning_16", "category": "reasoning", "question": "¿Cuántos billetes de dos dólares hay en una docena?", "ground_truth": "12"}
+{"id": "reasoning_17", "category": "reasoning", "question": "Si tienes un tazón con seis manzanas y te llevas cuatro, ¿cuántas tienes?", "ground_truth": "Tienes 4"}
+{"id": "reasoning_18", "category": "reasoning", "question": "¿Qué pesa más, una libra de plumas o una libra de ladrillos?", "ground_truth": "Pesan lo mismo"}
+{"id": "reasoning_19", "category": "reasoning", "question": "Antes de que se descubriera el Monte Everest, ¿cuál era la montaña más alta del mundo?", "ground_truth": "Monte Everest"}
+{"id": "reasoning_20", "category": "reasoning", "question": "Un avión se estrella en la frontera de EE. UU. y Canadá. ¿Dónde entierran a los sobrevivientes?", "ground_truth": "No se entierra a los sobrevivientes"}

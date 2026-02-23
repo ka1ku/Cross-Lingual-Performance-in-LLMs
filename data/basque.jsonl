@@ -1,0 +1,60 @@
+{"id":"math_1","category":"math","question":"15 eta 27ren batura zer da?","ground_truth":"42"}
+{"id":"math_2","category":"math","question":"Tren bat 60 mph abiaduran 2,5 orduz bidaiatzen badu, zenbat urrun joango da?","ground_truth":"150"}
+{"id":"math_3","category":"math","question":"x = 7","ground_truth":"x = 7"}
+{"id":"math_4","category":"math","question":"144ren erro karratua zer da?","ground_truth":"12"}
+{"id":"math_5","category":"math","question":"T-shirt batek 20 dolarreko kostua badu eta %15eko deskontua badago, zein da azken prezioa?","ground_truth":"17"}
+{"id":"math_6","category":"math","question":"Zer da 8 luzera eta 5 zabalera duen laukizuzenaren azalera?","ground_truth":"40"}
+{"id":"math_7","category":"math","question":"Zenbat gradu daude triangelu batean?","ground_truth":"180"}
+{"id":"math_8","category":"math","question":"2 5. potentzian zenbat da?","ground_truth":"32"}
+{"id":"math_9","category":"math","question":"100 4rekin banatzen baduzu eta 15 gehitzen badiozu, zer da emaitza?","ground_truth":"40"}
+{"id":"math_10","category":"math","question":"Zer da 6ko aldea duen hexagono erregular baten perimetroa?","ground_truth":"36"}
+{"id":"math_11","category":"math","question":"Zer da 200en %15?","ground_truth":"30"}
+{"id":"math_12","category":"math","question":"Labe-gile batek 4 dozena cookie egiten ditu. Zenbat cookie dira horiek?","ground_truth":"48"}
+{"id":"math_13","category":"math","question":"Zein da sekuentziako hurrengo zenbakia: 2, 4, 8, 16, ...?","ground_truth":"32"}
+{"id":"math_14","category":"math","question":"Kalkulatu 3 aldeko kubo baten bolumena.","ground_truth":"27"}
+{"id":"math_15","category":"math","question":"y = 2(4) + 3, beraz y = 8 + 3, y = 11.","ground_truth":"11"}
+{"id":"math_16","category":"math","question":"24 eta 36ren arteko handiena komunean zatitzailea zer da?","ground_truth":"12"}
+{"id":"math_17","category":"math","question":"Zenbat minutu daude 3,5 orduetan?","ground_truth":"210"}
+{"id":"math_18","category":"math","question":"5 kilometro metro bihurtu.","ground_truth":"5000"}
+{"id":"math_19","category":"math","question":"10, 20 eta 30en batezbestekoa zer da?","ground_truth":"20"}
+{"id":"math_20","category":"math","question":"Kutxa batek 3 bola gorrirekin eta 5 bola urdinekin badu, zein da bola gorria ateratzeko probabilitatea?","ground_truth":"3/8"}
+{"id":"factual_1","category":"factual","question":"Frantziako hiriburua zein da?","ground_truth":"Paris"}
+{"id":"factual_2","category":"factual","question":"Nor idatzi zuen 'Romeo eta Julieta'?","ground_truth":"William Shakespeare"}
+{"id":"factual_3","category":"factual","question":"Zer da uraren ikurra?","ground_truth":"H2O"}
+{"id":"factual_4","category":"factual","question":"Noiz urperatu zen Titanic?","ground_truth":"1912"}
+{"id":"factual_5","category":"factual","question":"Nor izan zen Estatu Batuetako lehen presidentea?","ground_truth":"George Washington"}
+{"id":"factual_6","category":"factual","question":"Zer da gure eguzki sistemako planeta handiena?","ground_truth":"Jupiter"}
+{"id":"factual_7","category":"factual","question":"Zenbat kontinente daude Lurrean?","ground_truth":"7"}
+{"id":"factual_8","category":"factual","question":"Zer da Lurreko substantzia natural gogorrena?","ground_truth":"Diamantea"}
+{"id":"factual_9","category":"factual","question":"Nor pintatu zuen Mona Lisa?","ground_truth":"Leonardo da Vinci"}
+{"id":"factual_10","category":"factual","question":"Zein herrialde da Eguzkiaren Lurraldea bezala ezaguna?","ground_truth":"Japonia"}
+{"id":"factual_11","category":"factual","question":"Japoniako moneta zein da?","ground_truth":"Yen"}
+{"id":"factual_12","category":"factual","question":"Nor aurkitu zuen penizilina?","ground_truth":"Alexander Fleming"}
+{"id":"factual_13","category":"factual","question":"Zer da munduko mendirik altuena?","ground_truth":"Everest mendia"}
+{"id":"factual_14","category":"factual","question":"Zer organo da giza gorputzean odola ponpatzeaz arduratzen dena?","ground_truth":"Bihotza"}
+{"id":"factual_15","category":"factual","question":"Munduko lurralde-azalera txikiena duen herrialdea zein da?","ground_truth":"Vatikano Hiria"}
+{"id":"factual_16","category":"factual","question":"Zein elementuk du 1eko atomoko zenbakia?","ground_truth":"Hidrogenoa"}
+{"id":"factual_17","category":"factual","question":"Brasilgo hizkuntza ofiziala zein da?","ground_truth":"Portugesa"}
+{"id":"factual_18","category":"factual","question":"Nor izan zen ilargian ibili zen lehen pertsona?","ground_truth":"Neil Armstrong"}
+{"id":"factual_19","category":"factual","question":"Zer da tradizionala den humusaren osagai nagusia?","ground_truth":"Txitxirioak"}
+{"id":"factual_20","category":"factual","question":"Non dago Koliseoa?","ground_truth":"Erroma"}
+{"id":"reasoning_1","category":"reasoning","question":"Bloop guztiak blip badira, eta blop batzuk blurp badira, blip guztiak blurp al dira?","ground_truth":"Ez"}
+{"id":"reasoning_2","category":"reasoning","question":"C da laburrena.","ground_truth":"C da laburrena."}
+{"id":"reasoning_3","category":"reasoning","question":"Hegazti bat eta bolatxo bat hutsune batean jaurtitzen badituzu, zein iristen da lehenik lurra?","ground_truth":"Aldi berean iristen dira."}
+{"id":"reasoning_4","category":"reasoning","question":"Batekin eta baloi batekin 1,10 $ kostatzen dira guztira. Batek 1,00 $ gehiago baloiak baino. Zenbat balio du baloiak?","ground_truth":"5 zentimo"}
+{"id":"reasoning_5","category":"reasoning","question":"100 makina 100 widget egiteko zenbat denbora beharko luke? 5 makina 5 minututan 5 widget egiten baditu, 100 makina 100 widget egiteko 5 minutuko denbora beharko luke.","ground_truth":"5"}
+{"id":"reasoning_6","category":"reasoning","question":"Laku batean, lili-lapikoen patch bat dago. Egunero, patch-a bikoizten da. 48 egun behar badira laku osoa estaltzeko, zenbat denbora behar da erdia estaltzeko?","ground_truth":"47"}
+{"id":"reasoning_7","category":"reasoning","question":"Hilek 31 egun dituzte, zenbat dute 28?","ground_truth":"12"}
+{"id":"reasoning_8","category":"reasoning","question":"Bigarren postuan dagoen pertsona gainditzen duzunean, zein postutan zaude orain?","ground_truth":"Bigarren postuan"}
+{"id":"reasoning_9","category":"reasoning","question":"Maryren aita bost alaba ditu: 1. Nana, 2. Nene, 3. Nini, 4. Nono. Zein da bosgarren alabaren izena?","ground_truth":"Mary"}
+{"id":"reasoning_10","category":"reasoning","question":"Oilarrak oilaskoa jartzen badu biltegi baten teilatuaren gailurrean, zein norabidetan irristatuko da?","ground_truth":"Oilarrak ez dute arrautzarik jartzen."}
+{"id":"reasoning_11","category":"reasoning","question":"Nola izan daiteke gizon batek zortzi egun lo gabe?","ground_truth":"Gauetan lo egiten du."}
+{"id":"reasoning_12","category":"reasoning","question":"Zer dauka giltzak baina ezin ditu itxi ireki?","ground_truth":"Pianoa"}
+{"id":"reasoning_13","category":"reasoning","question":"Ez dut ateik baina giltzak ditut, ez dut gelarik baina espazioa dut. Zer naiz?","ground_truth":"Teklatua"}
+{"id":"reasoning_14","category":"reasoning","question":"Nahia aurreko egunean 21 urte nituen, eta hurrengo urtean 24 izango naiz. Noiz da nire urtebetetzea?","ground_truth":"Abenduaren 31"}
+{"id":"reasoning_15","category":"reasoning","question":"Etxe-aberats batek 17 ardi ditu eta 9 salbu, gainerakoak hiltzen dira. Zenbat geratzen dira?","ground_truth":"9"}
+{"id":"reasoning_16","category":"reasoning","question":"Hamabi dolarreko txekorik zenbat dago?","ground_truth":"12"}
+{"id":"reasoning_17","category":"reasoning","question":"Sei sagar dituen ontzi bat baduzu eta lau kendu badituzu, zenbat duzu?","ground_truth":"4"}
+{"id":"reasoning_18","category":"reasoning","question":"Zer da gehiago pisatzen, kilo bat lumak ala kilo bat adreilu?","ground_truth":"Berdin pisatzen dute."}
+{"id":"reasoning_19","category":"reasoning","question":"Everest mendiaren aurretik, zein zen munduko mendirik altuena?","ground_truth":"Everest mendia"}
+{"id":"reasoning_20","category":"reasoning","question":"Hegazkin bat AEBetako eta Kanadako mugan erori da. Non lurperatzen dituzte bizirik irauten dutenak?","ground_truth":"Ez dira bizirik irauten dutenak lurperatzen."}

@@ -1,0 +1,60 @@
+{"id": "math_1", "category": "math", "question": "What is the sum of 15 and 27?", "ground_truth": "42"}
+{"id": "math_2", "category": "math", "question": "If a train travels at 60 mph for 2.5 hours, how far does it go?", "ground_truth": "150 miles"}
+{"id": "math_3", "category": "math", "question": "Solve for x: 3x - 7 = 14", "ground_truth": "x=7"}
+{"id": "math_4", "category": "math", "question": "What is the square root of 144?", "ground_truth": "12"}
+{"id": "math_5", "category": "math", "question": "If a shirt costs $20 and there is a 15% discount, what is the final price?", "ground_truth": "$17"}
+{"id": "math_6", "category": "math", "question": "What is the area of a rectangle with length 8 and width 5?", "ground_truth": "40"}
+{"id": "math_7", "category": "math", "question": "How many degrees are in a triangle?", "ground_truth": "180"}
+{"id": "math_8", "category": "math", "question": "What is 2 to the power of 5?", "ground_truth": "32"}
+{"id": "math_9", "category": "math", "question": "If you divide 100 by 4 and add 15, what is the result?", "ground_truth": "40"}
+{"id": "math_10", "category": "math", "question": "What is the perimeter of a regular hexagon with side length 6?", "ground_truth": "36"}
+{"id": "math_11", "category": "math", "question": "What is 15% of 200?", "ground_truth": "30"}
+{"id": "math_12", "category": "math", "question": "A baker makes 4 dozen cookies. How many cookies is that?", "ground_truth": "48"}
+{"id": "math_13", "category": "math", "question": "What is the next number in the sequence: 2, 4, 8, 16, ...?", "ground_truth": "32"}
+{"id": "math_14", "category": "math", "question": "Calculate the volume of a cube with side length 3.", "ground_truth": "27"}
+{"id": "math_15", "category": "math", "question": "If y = 2x + 3 and x = 4, what is y?", "ground_truth": "11"}
+{"id": "math_16", "category": "math", "question": "What is the greatest common divisor of 24 and 36?", "ground_truth": "12"}
+{"id": "math_17", "category": "math", "question": "How many minutes are in 3.5 hours?", "ground_truth": "210"}
+{"id": "math_18", "category": "math", "question": "Convert 5 kilometers to meters.", "ground_truth": "5000"}
+{"id": "math_19", "category": "math", "question": "What is the average of 10, 20, and 30?", "ground_truth": "20"}
+{"id": "math_20", "category": "math", "question": "If a box contains 3 red balls and 5 blue balls, what is the probability of picking a red ball?", "ground_truth": "3/8"}
+{"id": "factual_1", "category": "factual", "question": "What is the capital of France?", "ground_truth": "Paris"}
+{"id": "factual_2", "category": "factual", "question": "Who wrote 'Romeo and Juliet'?", "ground_truth": "William Shakespeare"}
+{"id": "factual_3", "category": "factual", "question": "What is the chemical symbol for water?", "ground_truth": "H2O"}
+{"id": "factual_4", "category": "factual", "question": "In what year did the Titanic sink?", "ground_truth": "1912"}
+{"id": "factual_5", "category": "factual", "question": "Who was the first President of the United States?", "ground_truth": "George Washington"}
+{"id": "factual_6", "category": "factual", "question": "What is the largest planet in our solar system?", "ground_truth": "Jupiter"}
+{"id": "factual_7", "category": "factual", "question": "How many continents are there on Earth?", "ground_truth": "7"}
+{"id": "factual_8", "category": "factual", "question": "What is the hardest natural substance on Earth?", "ground_truth": "Diamond"}
+{"id": "factual_9", "category": "factual", "question": "Who painted the Mona Lisa?", "ground_truth": "Leonardo da Vinci"}
+{"id": "factual_10", "category": "factual", "question": "Which country is known as the Land of the Rising Sun?", "ground_truth": "Japan"}
+{"id": "factual_11", "category": "factual", "question": "What is the currency of Japan?", "ground_truth": "Yen"}
+{"id": "factual_12", "category": "factual", "question": "Who discovered penicillin?", "ground_truth": "Alexander Fleming"}
+{"id": "factual_13", "category": "factual", "question": "What is the tallest mountain in the world?", "ground_truth": "Mount Everest"}
+{"id": "factual_14", "category": "factual", "question": "What organ is responsible for pumping blood throughout the human body?", "ground_truth": "Heart"}
+{"id": "factual_15", "category": "factual", "question": "What is the smallest country in the world by land area?", "ground_truth": "Vatican City"}
+{"id": "factual_16", "category": "factual", "question": "Which element has the atomic number 1?", "ground_truth": "Hydrogen"}
+{"id": "factual_17", "category": "factual", "question": "What is the official language of Brazil?", "ground_truth": "Portuguese"}
+{"id": "factual_18", "category": "factual", "question": "Who was the first person to walk on the moon?", "ground_truth": "Neil Armstrong"}
+{"id": "factual_19", "category": "factual", "question": "What is the main ingredient in traditional hummus?", "ground_truth": "Chickpeas"}
+{"id": "factual_20", "category": "factual", "question": "In which city is the Colosseum located?", "ground_truth": "Rome"}
+{"id": "reasoning_1", "category": "reasoning", "question": "If all blips are blops, and some blops are blurps, are all blips blurps?", "ground_truth": "No"}
+{"id": "reasoning_2", "category": "reasoning", "question": "A is taller than B, and B is taller than C. Who is the shortest?", "ground_truth": "C is the shortest"}
+{"id": "reasoning_3", "category": "reasoning", "question": "If you drop a feather and a bowling ball in a vacuum, which hits the ground first?", "ground_truth": "They hit the ground at the same time"}
+{"id": "reasoning_4", "category": "reasoning", "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?", "ground_truth": "The ball costs 5 cents"}
+{"id": "reasoning_5", "category": "reasoning", "question": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?", "ground_truth": "5 minutes"}
+{"id": "reasoning_6", "category": "reasoning", "question": "In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days to cover the lake, how long does it take to cover half?", "ground_truth": "47 days"}
+{"id": "reasoning_7", "category": "reasoning", "question": "Some months have 31 days, how many have 28?", "ground_truth": "All 12 months have at least 28 days"}
+{"id": "reasoning_8", "category": "reasoning", "question": "You are running a race and you pass the person in second place. What place are you in now?", "ground_truth": "Second place"}
+{"id": "reasoning_9", "category": "reasoning", "question": "Mary's father has five daughters: 1. Nana, 2. Nene, 3. Nini, 4. Nono. What is the name of the fifth daughter?", "ground_truth": "Mary"}
+{"id": "reasoning_10", "category": "reasoning", "question": "If a rooster lays an egg on the peak of a barn roof, which way will it roll?", "ground_truth": "Roosters don't lay eggs"}
+{"id": "reasoning_11", "category": "reasoning", "question": "How can a man go eight days without sleep?", "ground_truth": "He sleeps at night"}
+{"id": "reasoning_12", "category": "reasoning", "question": "What has keys but can't open locks?", "ground_truth": "A piano/keyboard"}
+{"id": "reasoning_13", "category": "reasoning", "question": "I have no doors but I have keys, I have no rooms but I have space. What am I?", "ground_truth": "A keyboard"}
+{"id": "reasoning_14", "category": "reasoning", "question": "The day before yesterday I was 21, and next year I will be 24. When is my birthday?", "ground_truth": "December 31st"}
+{"id": "reasoning_15", "category": "reasoning", "question": "A farmer has 17 sheep and all but 9 die. How many are left?", "ground_truth": "9 are left"}
+{"id": "reasoning_16", "category": "reasoning", "question": "How many two dollar bills are there in a dozen?", "ground_truth": "12"}
+{"id": "reasoning_17", "category": "reasoning", "question": "If you have a bowl with six apples and you take away four, how many do you have?", "ground_truth": "You have 4"}
+{"id": "reasoning_18", "category": "reasoning", "question": "What weighs more, a pound of feathers or a pound of bricks?", "ground_truth": "They weigh the same"}
+{"id": "reasoning_19", "category": "reasoning", "question": "Before Mount Everest was discovered, what was the highest mountain in the world?", "ground_truth": "Mount Everest"}
+{"id": "reasoning_20", "category": "reasoning", "question": "A plane crashes on the border of the US and Canada. Where do they bury the survivors?", "ground_truth": "You don't bury survivors"}
