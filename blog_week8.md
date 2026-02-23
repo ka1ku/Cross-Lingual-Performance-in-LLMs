@@ -44,9 +44,6 @@ The heatmap makes the layered structure of processing immediately visible. In la
 
 **Figure 2.** Mean rank of the ground-truth first token across 20 questions per category, by layer. Lower = better (rank 0 would mean the model's top prediction matches the correct answer). Y-axis is inverted so "better" is visually up.
 
-The most important pattern in Figure 2 is the **late-layer consolidation effect**: GT rank improves substantially in the final few layers (roughly 20–23) across all categories and languages. Although rank remains high through most of the network, there is a clear drop near the top — the correct token becomes much more competitive right before the model produces its output. This means that even when BLOOM-560m ultimately produces an incorrect answer, it often begins moving probability mass toward the correct token only in the very last layers. Answer-relevant information crystallizes late rather than being accumulated steadily from the beginning.
-
-Across categories:
 
 - **Math:** All three languages follow nearly identical trajectories. GT rank improves steadily through the network, and the curves converge tightly in the final layers. This suggests arithmetic processing is handled similarly across languages at the representation level, regardless of whether the model's final output is correct.
 - **Factual:** Here we see clearer language separation. English generally maintains better (lower) GT rank than Spanish, which outperforms Basque through most of the network. However, the gap narrows in the final layers, suggesting that late-layer transformations partially compress cross-lingual differences.
@@ -61,23 +58,9 @@ Importantly, high GT rank does not necessarily mean the model has no internal si
 **Figure 3.** Mean top-1 probability (confidence in the model's highest-probability token) at each layer, averaged across 20 questions per category.
 
 
-The cross-lingual comparison yields several insights:
-
 - **Math:** The three languages show almost perfectly overlapping confidence trajectories — the curves are nearly indistinguishable. This strongly supports the hypothesis that mathematical computation is processed in a language-agnostic manner within BLOOM's internal representations.
 - **Factual:** English and Spanish generally maintains higher confidence in earlier layers.
 - **Reasoning:** Confidence collapses more dramatically and recovers less strongly than in math. All languages exhibit similar dynamics, suggesting that reasoning difficulty dominates over language effects at this model scale.
 
-
-### What This Tells Us About Language in Transformers
-
-**Answer information consolidates late.** Across tasks and languages, GT rank improves primarily in the final few layers, not gradually throughout the network. The model does not accumulate evidence for the correct answer linearly.
-
-**Language differences are most visible in intermediate layers.** Factual tasks show larger mid-layer separation between English and Basque, which narrows near the top of the network. This is consistent with a partial implicit-translation account: the model may map non-English inputs toward a more language-neutral representation in middle layers, but the mapping is lossy for lower-resource languages.
-
-**Math is the most language-stable category.** Both rank and confidence trajectories are nearly identical across languages for arithmetic problems, suggesting that structured numerical reasoning does not require language-specific pathways at the representation level.
-
 ## Next Steps (Week 9)
-Our current logit lens analysis tracks only the first token of each ground-truth answer, which is noisy — especially cross-lingually where the same answer may tokenize differently.  Currently we average the rank and confidence curves over all questions regardless of whether the model got the answer right. The more informative analysis splits questions into *correct* vs. *incorrect* final outputs and compares their logit lens trajectories.
-
-**3. Calibration evaluation**
-We observed qualitatively that the model becomes highly confident even on incorrect answers. We will quantify this by looking at accuracy vs. coverage as we vary a confidence threshold τ, showing how much accuracy improves if the model abstains on low-confidence predictions. 
+While we ran out of time to implement this for this blog post, in our next blog post we should will move beyond tracking surface-level logits and begin directly analyzing the model’s internal representations to understand how it processes language across layers. We will extract the residual stream vectors at each layer and compare semantically equivalent prompts across English, Spanish, and Basque using cosine similarity or representational similarity analysis (RSA). This will allow us to test whether mathematically equivalent problems converge toward shared internal representations, supporting our hypothesis that math is processed in a more language-agnostic way than factual or reasoning tasks. In parallel, we should split questions by whether the model ultimately answered correctly and compare their representational trajectories, which may reveal whether successful reasoning corresponds to earlier or stronger cross-lingual alignment. 
