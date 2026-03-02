@@ -1,0 +1,74 @@
+[
+  {
+    "id": "math_1",
+    "language": "English",
+    "category": "math",
+    "question": "What is the sum of 15 and 27?",
+    "ground_truth": "42",
+    "bloom_answer": "\"\n\"How many times does the number 4 appear in the sequence 1, 2, 3, 4, 5, 6, 7, 8,"
+  },
+  {
+    "id": "math_2",
+    "language": "English",
+    "category": "math",
+    "question": "If a train travels at 60 mph for 2.5 hours, how far does it go?",
+    "ground_truth": "150 miles",
+    "bloom_answer": "A. 60 mph x 2.5 hours = 120 mph B. 60 mph x 2.5 hours = 120 mph C. 60 mph x 2"
+  },
+  {
+    "id": "math_3",
+    "language": "English",
+    "category": "math",
+    "question": "Solve for x: 3x - 7 = 14",
+    "ground_truth": "x=7",
+    "bloom_answer": "Solve for x: 3x - 7 = 14\nSolve for x: 3x - 7 = 14\nSolve for x: 3x - 7 = 14"
+  },
+  {
+    "id": "math_1",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es la suma de 15 y 27?",
+    "ground_truth": "42",
+    "bloom_answer": "\", se le pregunt\u00f3 a la ni\u00f1a. La respuesta fue: \"15 + 27 = 42\"."
+  },
+  {
+    "id": "math_2",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Si un tren viaja a 60 mph durante 2.5 horas, \u00bfqu\u00e9 distancia recorre?",
+    "ground_truth": "150 millas (240 kilometros)",
+    "bloom_answer": "a) 60 millas b) 60 kil\u00f3metros c) 60 millas por hora d) 60 millas por hora en 2.5 horas e) 60 millas por"
+  },
+  {
+    "id": "math_3",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Resuelve para x: 3x - 7 = 14",
+    "ground_truth": "x=7",
+    "bloom_answer": "y = x + 1\ny = x + 1\ny = x + 1\ny = x + 1\ny = x + 1"
+  },
+  {
+    "id": "math_1",
+    "language": "Basque",
+    "category": "math",
+    "question": "15 eta 27ren batura zer da?",
+    "ground_truth": "42",
+    "bloom_answer": ""
+  },
+  {
+    "id": "math_2",
+    "language": "Basque",
+    "category": "math",
+    "question": "Tren bat 60 mph abiaduran 2,5 orduz bidaiatzen badu, zenbat urrun joango da?",
+    "ground_truth": "150",
+    "bloom_answer": ""
+  },
+  {
+    "id": "math_3",
+    "language": "Basque",
+    "category": "math",
+    "question": "x = 7",
+    "ground_truth": "x = 7",
+    "bloom_answer": ".5, y = 0.5, z = 0.5, radius = 0.5, color = \"red\", alpha = 0."
+  }
+]

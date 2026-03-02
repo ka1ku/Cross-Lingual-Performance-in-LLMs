@@ -1,138 +1,184 @@
+"""
+step1.py — Black-box accuracy evaluation using Mistral-7B-Instruct-v0.2 via Modal.
+
+Mistral-7B-Instruct-v0.2 is the same model used for logit lens and RSA in
+multilingual_analysis_large.ipynb, making the black-box baseline directly
+comparable to the white-box probing results.
+
+Usage:
+    # Smoke test (3 questions per language, 1 per category):
+    SMOKE_TEST=true modal run step1.py
+
+    # Full run (60 questions per language, 180 total):
+    modal run step1.py
+"""
+
 import json
 import os
-import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from dotenv import load_dotenv
-from openai import OpenAI
-import google.generativeai as genai
+import modal
 
-load_dotenv(override=True)
+# ── Modal setup ───────────────────────────────────────────────────────────────
 
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+app = modal.App("step1-accuracy-eval")
 
-# Use the cheapest models
-OAI_MODEL = "gpt-3.5-turbo-0125"  # Cheapest chat model as requested
-GEMINI_MODEL = "gemini-2.5-flash" # Modern low-end gemini
+image = (
+    modal.Image.debian_slim(python_version="3.11")
+    .pip_install(
+        "torch==2.3.0",
+        "transformers==4.41.0",
+        "accelerate==0.30.0",
+        "numpy",
+    )
+)
 
-def get_openai_response(prompt):
-    try:
-        response = openai_client.chat.completions.create(
-            model=OAI_MODEL,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.0
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        print(f"OpenAI error: {e}")
-        return f"API Error: {e}"
+MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
+MODEL_CACHE_DIR = "/model_cache"
 
-def get_gemini_response(prompt):
-    try:
-        model = genai.GenerativeModel(GEMINI_MODEL)
-        response = model.generate_content(prompt, generation_config=genai.types.GenerationConfig(temperature=0.0))
-        return response.text
-    except Exception as e:
-        print(f"Gemini error: {e}")
-        return f"API Error: {e}"
+model_volume = modal.Volume.from_name("mistral-weights-cache", create_if_missing=True)
+
+
+def _format_prompt(question: str) -> str:
+    """Mistral instruct format: <s>[INST] question [/INST]"""
+    return f"<s>[INST] {question} [/INST]"
+
+
+@app.function(
+    image=image,
+    gpu="A100",
+    volumes={MODEL_CACHE_DIR: model_volume},
+    timeout=900,
+    memory=20480,
+)
+def run_inference(questions: list[dict]) -> list[dict]:
+    """Greedy-decode each question with Mistral-7B-Instruct-v0.2 and return answers."""
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=MODEL_CACHE_DIR)
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_NAME,
+        device_map="auto",
+        torch_dtype=torch.float16,
+        cache_dir=MODEL_CACHE_DIR,
+    )
+    model.eval()
+    model_volume.commit()
+
+    results = []
+    for item in questions:
+        prompt = _format_prompt(item["question"])
+        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        with torch.no_grad():
+            output_ids = model.generate(
+                **inputs,
+                max_new_tokens=50,
+                do_sample=False,
+                pad_token_id=tokenizer.eos_token_id,
+            )
+        new_tokens = output_ids[0][inputs["input_ids"].shape[1]:]
+        answer = tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+        results.append({
+            "id": item["id"],
+            "language": item["language"],
+            "category": item["category"],
+            "question": item["question"],
+            "ground_truth": item.get("ground_truth", ""),
+            "model_answer": answer,
+        })
+
+    return results
+
+
+# ── Judge (runs locally) ──────────────────────────────────────────────────────
 
 def evaluate_with_judge(question, model_answer, ground_truth):
-    if "API Error" in model_answer or "object has no attribute" in model_answer:
+    """Use GPT-4o-mini as a cheap judge to score the model's answer."""
+    from openai import OpenAI
+    from dotenv import load_dotenv
+    load_dotenv(override=True)
+    if not model_answer or "API Error" in model_answer:
         return False
-    # Using gpt-4o-mini as a cheap judge
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     prompt = f'''
     You are an objective evaluator.
     Question: "{question}"
     Expected Correct Answer Concept: "{ground_truth}"
     Model's Answer: "{model_answer}"
-    
+
     Does the Model's Answer contain or convey the correct concept required by the Expected Correct Answer?
     Some Model answers might be verbose or slightly different, but if they get the core specific answer right, return YES.
     If they are completely wrong, return NO.
-    
+
     Answer ONLY with exactly "YES" or "NO".
     '''
     try:
-        response = openai_client.chat.completions.create(
+        response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.0
+            temperature=0.0,
         )
         return "YES" in response.choices[0].message.content.upper()
     except Exception as e:
         print("Judge error:", str(e))
         return False
 
-def evaluate_question(item, language):
-    q_id = item["id"]
-    category = item["category"]
-    question = item["question"]
-    gt = item.get("ground_truth", "") # Read directly from JSON item
-    
-    oai_ans = get_openai_response(question)
-    gemini_ans = get_gemini_response(question)
-    
-    # Judge
-    oai_correct = evaluate_with_judge(question, oai_ans, gt)
-    gemini_correct = evaluate_with_judge(question, gemini_ans, gt)
-    
-    return {
-        "id": q_id,
-        "language": language,
-        "category": category,
-        "oai_correct": oai_correct,
-        "gemini_correct": gemini_correct
-    }
 
+# ── Local entrypoint ──────────────────────────────────────────────────────────
+
+@app.local_entrypoint()
 def main():
-    print("Loading data...")
-    all_data = []
-    for lang, file_path in [("English", "data/english.jsonl"), ("Spanish", "data/spanish.jsonl"), ("Basque", "data/basque.jsonl")]:
-        with open(file_path, "r", encoding="utf-8") as f:
-            for line in f:
-                item = json.loads(line)
-                all_data.append((item, lang))
-                
-    print(f"Loaded {len(all_data)} questions. Starting evaluation...")
-    results = []
-    
-    # We will use max_workers=5 to avoid rate limits on small/free tiers
-    start_time = time.time()
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = {executor.submit(evaluate_question, item, lang): (item, lang) for item, lang in all_data}
-        for i, future in enumerate(as_completed(futures)):
-            try:
-                result = future.result()
-                results.append(result)
-                if (i+1) % 10 == 0:
-                    print(f"Evaluated {i+1} / {len(all_data)} questions...")
-            except Exception as e:
-                print(f"Error evaluating a question: {e}")
-                
-    print(f"Evaluation complete in {time.time() - start_time:.2f} seconds.")
+    SMOKE_TEST = os.environ.get("SMOKE_TEST", "false").lower() == "true"
 
-    # Calculate metrics
+    print("Loading benchmark data...")
+    all_questions = []
+    for lang, file_path in [
+        ("English", "data/english.jsonl"),
+        ("Spanish", "data/spanish.jsonl"),
+        ("Basque",  "data/basque.jsonl"),
+    ]:
+        with open(file_path, encoding="utf-8") as f:
+            items = [json.loads(line) for line in f if line.strip()]
+        if SMOKE_TEST:
+            # Pick 1 per category to cover all 3 categories in the smoke test
+            by_cat = {}
+            for item in items:
+                by_cat.setdefault(item["category"], []).append(item)
+            items = [v[0] for v in by_cat.values()]
+        for item in items:
+            item["language"] = lang
+        all_questions.extend(items)
+
+    total = len(all_questions)
+    print(f"Loaded {total} questions. Sending to Modal (Mistral-7B-Instruct-v0.2)...")
+
+    inference_results = run_inference.remote(all_questions)
+
+    print(f"Got {len(inference_results)} answers back. Judging with GPT-4o-mini...")
+
     metrics = {
-        "English": {"math": {"oai": 0, "gemini": 0}, "factual": {"oai": 0, "gemini": 0}, "reasoning": {"oai": 0, "gemini": 0}},
-        "Spanish": {"math": {"oai": 0, "gemini": 0}, "factual": {"oai": 0, "gemini": 0}, "reasoning": {"oai": 0, "gemini": 0}},
-        "Basque": {"math": {"oai": 0, "gemini": 0}, "factual": {"oai": 0, "gemini": 0}, "reasoning": {"oai": 0, "gemini": 0}}
+        lang: {cat: {"correct": 0, "total": 0} for cat in ["math", "factual", "reasoning"]}
+        for lang in ["English", "Spanish", "Basque"]
     }
-    
-    for r in results:
-        lang = r["language"]
-        cat = r["category"]
-        if r["oai_correct"]:
-            metrics[lang][cat]["oai"] += 1
-        if r["gemini_correct"]:
-            metrics[lang][cat]["gemini"] += 1
-            
-    print("\n=== RESULTS ===")
+
+    for i, r in enumerate(inference_results):
+        correct = evaluate_with_judge(r["question"], r["model_answer"], r["ground_truth"])
+        metrics[r["language"]][r["category"]]["correct"] += int(correct)
+        metrics[r["language"]][r["category"]]["total"]   += 1
+        if (i + 1) % 10 == 0 or (i + 1) == total:
+            print(f"  Judged {i+1}/{total}")
+
+    with open("mistral_inference_results.json", "w") as f:
+        json.dump(inference_results, f, indent=2)
+    print("\nSaved mistral_inference_results.json")
+
+    print("\n=== RESULTS (Mistral-7B-Instruct-v0.2) ===")
     for lang in ["English", "Spanish", "Basque"]:
         print(f"\n-- {lang} --")
         for cat in ["math", "factual", "reasoning"]:
-            oai_score = metrics[lang][cat]["oai"] / 20.0 * 100
-            gem_score = metrics[lang][cat]["gemini"] / 20.0 * 100
-            print(f"Category: {cat:10s} | OpenAI ({OAI_MODEL}): {oai_score:5.1f}% | Gemini ({GEMINI_MODEL}): {gem_score:5.1f}%")
+            m = metrics[lang][cat]
+            n = m["total"]
+            pct = (m["correct"] / n * 100) if n > 0 else 0.0
+            print(f"  Category: {cat:10s} | Mistral-7B-Instruct: {pct:5.1f}%  ({m['correct']}/{n})")
 
-if __name__ == "__main__":
-    main()
+    if SMOKE_TEST:
+        print("\n(SMOKE_TEST mode — 1 question per category per language)")

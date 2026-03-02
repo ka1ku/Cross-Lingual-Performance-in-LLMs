@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "math_1",
+    "language": "English",
+    "category": "math",
+    "question": "What is the sum of 15 and 27?",
+    "ground_truth": "42",
+    "model_answer": "The sum of 15 and 27 is 42. Here's the calculation: 15 + 27 = 42."
+  },
+  {
+    "id": "math_2",
+    "language": "English",
+    "category": "math",
+    "question": "If a train travels at 60 mph for 2.5 hours, how far does it go?",
+    "ground_truth": "150 miles",
+    "model_answer": "To find the distance traveled by the train, we can use the formula:\n\nDistance = Speed * Time\n\nGiven that the speed of the train is 60 mph and the time traveled is 2.5 hours, we"
+  },
+  {
+    "id": "math_3",
+    "language": "English",
+    "category": "math",
+    "question": "Solve for x: 3x - 7 = 14",
+    "ground_truth": "x=7",
+    "model_answer": "To solve the equation 3x - 7 = 14 for x, follow these steps:\n\n1. Isolate the term with x on one side of the equation. To do this, first add 7 to both sides of"
+  },
+  {
+    "id": "math_4",
+    "language": "English",
+    "category": "math",
+    "question": "What is the square root of 144?",
+    "ground_truth": "12",
+    "model_answer": "The square root of 144 is 12. This is because 12 multiplied by itself (12 x 12) equals 144. Alternatively, you can find the square root of 14"
+  },
+  {
+    "id": "math_5",
+    "language": "English",
+    "category": "math",
+    "question": "If a shirt costs $20 and there is a 15% discount, what is the final price?",
+    "ground_truth": "$17",
+    "model_answer": "To find the final price of the shirt after the discount, you first need to calculate the amount of the discount. You can do this by multiplying the original price by the discount percentage:\n\nDiscount amount = Original price * Discount percentage"
+  },
+  {
+    "id": "math_6",
+    "language": "English",
+    "category": "math",
+    "question": "What is the area of a rectangle with length 8 and width 5?",
+    "ground_truth": "40",
+    "model_answer": "The area of a rectangle can be calculated by multiplying its length by its width. In this case, the length is 8 units and the width is 5 units, so the area would be:\n\nArea = Length * Width"
+  },
+  {
+    "id": "math_7",
+    "language": "English",
+    "category": "math",
+    "question": "How many degrees are in a triangle?",
+    "ground_truth": "180",
+    "model_answer": "A triangle is a polygon with three edges and three vertices. The sum of the angles in any triangle is always 180 degrees. This is a fundamental property of triangles and holds true for all types of triangles, whether they are"
+  },
+  {
+    "id": "math_8",
+    "language": "English",
+    "category": "math",
+    "question": "What is 2 to the power of 5?",
+    "ground_truth": "32",
+    "model_answer": "The power of a number `x` raised to the power of `n` is calculated by multiplying `x` by itself `n` times. So, 2 to the power of 5 is:\n\n2 * 2 *"
+  },
+  {
+    "id": "math_9",
+    "language": "English",
+    "category": "math",
+    "question": "If you divide 100 by 4 and add 15, what is the result?",
+    "ground_truth": "40",
+    "model_answer": "The result of dividing 100 by 4 and adding 15 is a calculation with two steps. First, divide 100 by 4:\n\n100 \u00f7 4 = 25"
+  },
+  {
+    "id": "math_10",
+    "language": "English",
+    "category": "math",
+    "question": "What is the perimeter of a regular hexagon with side length 6?",
+    "ground_truth": "36",
+    "model_answer": "A regular hexagon is a six-sided polygon with all sides equal in length and all interior angles equal. The formula for the perimeter of a regular hexagon is given by the equation:\n\nPerimeter = 6 * side"
+  },
+  {
+    "id": "math_11",
+    "language": "English",
+    "category": "math",
+    "question": "What is 15% of 200?",
+    "ground_truth": "30",
+    "model_answer": "To find 15% of 200, you can use the following formula:\n\nPercentage of a number = (Percentage / 100) * Number\n\nIn this case, the percentage is 15"
+  },
+  {
+    "id": "math_12",
+    "language": "English",
+    "category": "math",
+    "question": "A baker makes 4 dozen cookies. How many cookies is that?",
+    "ground_truth": "48",
+    "model_answer": "A dozen is equal to 12 items. So, 4 dozen is equal to 4 * 12 = 48 cookies. Therefore, the baker makes 48 cookies."
+  },
+  {
+    "id": "math_13",
+    "language": "English",
+    "category": "math",
+    "question": "What is the next number in the sequence: 2, 4, 8, 16, ...?",
+    "ground_truth": "32",
+    "model_answer": "The next number in the sequence is 32. This is a sequence of powers of 2. Each number is obtained by multiplying the previous number by 2. So, 16 multiplied by 2 equals 32."
+  },
+  {
+    "id": "math_14",
+    "language": "English",
+    "category": "math",
+    "question": "Calculate the volume of a cube with side length 3.",
+    "ground_truth": "27",
+    "model_answer": "The volume of a cube is calculated by finding the cube of the side length. So, for a cube with side length 3, the volume would be:\n\nVolume = side length ^ 3\nVolume = 3 ^"
+  },
+  {
+    "id": "math_15",
+    "language": "English",
+    "category": "math",
+    "question": "If y = 2x + 3 and x = 4, what is y?",
+    "ground_truth": "11",
+    "model_answer": "To find the value of y when x is given as 4, we can substitute the value of x into the equation y = 2x + 3.\n\nSo, y = 2(4) + 3\n\nFirst"
+  },
+  {
+    "id": "math_16",
+    "language": "English",
+    "category": "math",
+    "question": "What is the greatest common divisor of 24 and 36?",
+    "ground_truth": "12",
+    "model_answer": "The greatest common divisor (GCD) of two integers is the largest positive integer that can evenly divide both numbers. In this case, the numbers are 24 and 36. To find their GCD, we can use"
+  },
+  {
+    "id": "math_17",
+    "language": "English",
+    "category": "math",
+    "question": "How many minutes are in 3.5 hours?",
+    "ground_truth": "210",
+    "model_answer": "To find the number of minutes in 3.5 hours, you can use the conversion factor that 1 hour equals 60 minutes. Here's the calculation:\n\nMinutes in 3.5 hours = Hours * Min"
+  },
+  {
+    "id": "math_18",
+    "language": "English",
+    "category": "math",
+    "question": "Convert 5 kilometers to meters.",
+    "ground_truth": "5000",
+    "model_answer": "To convert 5 kilometers to meters, you can use the conversion factor that 1 kilometer is equal to 1000 meters. So, to convert 5 kilometers to meters, you can multiply 5 by 1"
+  },
+  {
+    "id": "math_19",
+    "language": "English",
+    "category": "math",
+    "question": "What is the average of 10, 20, and 30?",
+    "ground_truth": "20",
+    "model_answer": "The average of the numbers 10, 20, and 30 can be calculated by adding up all the numbers and then dividing the sum by the total count of numbers. So, the calculation would be:\n\n(1"
+  },
+  {
+    "id": "math_20",
+    "language": "English",
+    "category": "math",
+    "question": "If a box contains 3 red balls and 5 blue balls, what is the probability of picking a red ball?",
+    "ground_truth": "3/8",
+    "model_answer": "The probability of picking a red ball is calculated by dividing the number of red balls by the total number of balls in the box. In this case, there are 3 red balls and a total of 3 (red) + 5 ("
+  },
+  {
+    "id": "factual_1",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the capital of France?",
+    "ground_truth": "Paris",
+    "model_answer": "The capital city of France is Paris. Paris is one of the most famous cities in the world and is known for its iconic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the"
+  },
+  {
+    "id": "factual_2",
+    "language": "English",
+    "category": "factual",
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "ground_truth": "William Shakespeare",
+    "model_answer": "The play \"Romeo and Juliet\" was written by the famous English playwright William Shakespeare. He wrote the play around the end of the 16th century, between 1595 and 1597. It"
+  },
+  {
+    "id": "factual_3",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the chemical symbol for water?",
+    "ground_truth": "H2O",
+    "model_answer": "The chemical symbol for water is H2O. Water is composed of two hydrogen atoms and one oxygen atom. Each hydrogen atom is bonded to the oxygen atom through covalent bonds. Water is a universal solvent and plays a vital"
+  },
+  {
+    "id": "factual_4",
+    "language": "English",
+    "category": "factual",
+    "question": "In what year did the Titanic sink?",
+    "ground_truth": "1912",
+    "model_answer": "The RMS Titanic sank on April 15, 1912. It was a British passenger liner that famously struck an iceberg during its maiden voyage from Southampton to New York City, resulting in the loss"
+  },
+  {
+    "id": "factual_5",
+    "language": "English",
+    "category": "factual",
+    "question": "Who was the first President of the United States?",
+    "ground_truth": "George Washington",
+    "model_answer": "The first President of the United States was George Washington. He served two terms from April 30, 1789, to March 4, 1797. Washington played a crucial role in the founding of the United States"
+  },
+  {
+    "id": "factual_6",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the largest planet in our solar system?",
+    "ground_truth": "Jupiter",
+    "model_answer": "The largest planet in our solar system is Jupiter. Jupiter is the fifth planet from the sun and is the largest planet in terms of both mass and volume. It is a gas giant, meaning that it does not have a solid surface like the"
+  },
+  {
+    "id": "factual_7",
+    "language": "English",
+    "category": "factual",
+    "question": "How many continents are there on Earth?",
+    "ground_truth": "7",
+    "model_answer": "There are seven continents on Earth. These are: 1. Asia, 2. Africa, 3. North America, 4. South America, 5. Antarctica, 6. Europe, and 7."
+  },
+  {
+    "id": "factual_8",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the hardest natural substance on Earth?",
+    "ground_truth": "Diamond",
+    "model_answer": "The hardest naturally occurring substance on Earth is diamond. Diamonds are made of carbon atoms arranged in a crystal structure where each carbon atom is covalently bonded to four other carbon atoms in a tetrahedral structure. This strong coval"
+  },
+  {
+    "id": "factual_9",
+    "language": "English",
+    "category": "factual",
+    "question": "Who painted the Mona Lisa?",
+    "ground_truth": "Leonardo da Vinci",
+    "model_answer": "The Mona Lisa is a famous painting created by the Italian artist Leonardo da Vinci between 1472 and 1506, although some scholars believe that he continued to work on it until his death in 151"
+  },
+  {
+    "id": "factual_10",
+    "language": "English",
+    "category": "factual",
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "ground_truth": "Japan",
+    "model_answer": "Japan is known as the Land of the Rising Sun. This is because Japan is the easternmost country in Asia, and the sun rises there before it rises anywhere else in the world's major time zones. This phrase is not an"
+  },
+  {
+    "id": "factual_11",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the currency of Japan?",
+    "ground_truth": "Yen",
+    "model_answer": "The currency used in Japan is the Japanese Yen. Its ISO code is JPY. It is subdivided into 100 sen, although sen are no longer used in everyday transactions. The symbol for the Japanese Yen is \u00a5"
+  },
+  {
+    "id": "factual_12",
+    "language": "English",
+    "category": "factual",
+    "question": "Who discovered penicillin?",
+    "ground_truth": "Alexander Fleming",
+    "model_answer": "Penicillin was discovered accidentally by Alexander Fleming in 1928. He was a Scottish bacteriologist working at St Mary's Hospital in London. Fleming noticed that a mold, later identified as Penicill"
+  },
+  {
+    "id": "factual_13",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the tallest mountain in the world?",
+    "ground_truth": "Mount Everest",
+    "model_answer": "The tallest mountain in the world is Mount Everest. It is located in the Mahalangur mountain range in the Himalayas, on the border between Nepal and Tibet, China. Mount Everest has an elevation of"
+  },
+  {
+    "id": "factual_14",
+    "language": "English",
+    "category": "factual",
+    "question": "What organ is responsible for pumping blood throughout the human body?",
+    "ground_truth": "Heart",
+    "model_answer": "The heart is the organ responsible for pumping blood throughout the human body. It is a muscular organ that contracts and pumps blood through a network of arteries, veins, and capillaries, supplying oxygen and nutrients"
+  },
+  {
+    "id": "factual_15",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the smallest country in the world by land area?",
+    "ground_truth": "Vatican City",
+    "model_answer": "The smallest country in the world by land area is Vatican City, with an area of approximately 0.2 square miles (0.44 square kilometers). It is an independent city-state enclaved within Rome, Italy."
+  },
+  {
+    "id": "factual_16",
+    "language": "English",
+    "category": "factual",
+    "question": "Which element has the atomic number 1?",
+    "ground_truth": "Hydrogen",
+    "model_answer": "The element with the atomic number 1 is Hydrogen. In the periodic table, hydrogen is listed as a separate group because of its unique chemical properties. It is the lightest and most abundant element in the universe. Atomic number"
+  },
+  {
+    "id": "factual_17",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the official language of Brazil?",
+    "ground_truth": "Portuguese",
+    "model_answer": "The official language of Brazil is Portuguese. Brazil gained its independence from Portugal in 1822, and Portuguese was already the dominant language at that time due to the country's history as a Portuguese colony. Today, it is spoken as a"
+  },
+  {
+    "id": "factual_18",
+    "language": "English",
+    "category": "factual",
+    "question": "Who was the first person to walk on the moon?",
+    "ground_truth": "Neil Armstrong",
+    "model_answer": "The first person to walk on the moon was Neil Armstrong on July 20, 1969. He took his first steps on the lunar surface during the Apollo 11 mission at 10:56"
+  },
+  {
+    "id": "factual_19",
+    "language": "English",
+    "category": "factual",
+    "question": "What is the main ingredient in traditional hummus?",
+    "ground_truth": "Chickpeas",
+    "model_answer": "The main ingredient in traditional hummus is chickpeas. Hummus is a popular Middle Eastern dip or spread made primarily from cooked, mashed chickpeas blended with tahini (sesame seed paste), garlic, lemon juice,"
+  },
+  {
+    "id": "factual_20",
+    "language": "English",
+    "category": "factual",
+    "question": "In which city is the Colosseum located?",
+    "ground_truth": "Rome",
+    "model_answer": "The Colosseum is located in Rome, Italy. It is an iconic symbol of ancient Roman civilization and is one of the most famous structures and tourist attractions in the world. The Colosseum is an elliptical am"
+  },
+  {
+    "id": "reasoning_1",
+    "language": "English",
+    "category": "reasoning",
+    "question": "If all blips are blops, and some blops are blurps, are all blips blurps?",
+    "ground_truth": "No",
+    "model_answer": "Based on the information given, not all blips are blurps. Here's the reasoning:\n\n1. We know that all blips are blops.\n2. We also know that some blops are blurps.\n3"
+  },
+  {
+    "id": "reasoning_2",
+    "language": "English",
+    "category": "reasoning",
+    "question": "A is taller than B, and B is taller than C. Who is the shortest?",
+    "ground_truth": "C is the shortest",
+    "model_answer": "Based on the information given, C is the shortest. Since A is taller than B, and B is taller than C, that means A is taller than C as well. Therefore, C is the shortest among the three."
+  },
+  {
+    "id": "reasoning_3",
+    "language": "English",
+    "category": "reasoning",
+    "question": "If you drop a feather and a bowling ball in a vacuum, which hits the ground first?",
+    "ground_truth": "They hit the ground at the same time",
+    "model_answer": "In a vacuum, there is no air resistance. This means that both a feather and a bowling ball would fall at the same rate, regardless of their size or shape. Therefore, they would hit the ground at the same time if dropped from"
+  },
+  {
+    "id": "reasoning_4",
+    "language": "English",
+    "category": "reasoning",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "ground_truth": "The ball costs 5 cents",
+    "model_answer": "Let's denote the cost of the ball as x. According to the problem, the bat costs $1.00 more than the ball, so the cost of the bat is x + $1.00. The total cost of the"
+  },
+  {
+    "id": "reasoning_5",
+    "language": "English",
+    "category": "reasoning",
+    "question": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?",
+    "ground_truth": "5 minutes",
+    "model_answer": "Based on the information given, one machine takes 5 minutes to produce one widget. Therefore, with 100 machines working simultaneously, they should be able to produce 100 widgets in the same 5-minute time frame."
+  },
+  {
+    "id": "reasoning_6",
+    "language": "English",
+    "category": "reasoning",
+    "question": "In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48 days to cover the lake, how long does it take to cover half?",
+    "ground_truth": "47 days",
+    "model_answer": "To find out how long it takes for the lily pads to cover half of the lake, we need to determine the number of days it takes for the patch to cover half of the lake's area. Since the patch doubles in size"
+  },
+  {
+    "id": "reasoning_7",
+    "language": "English",
+    "category": "reasoning",
+    "question": "Some months have 31 days, how many have 28?",
+    "ground_truth": "All 12 months have at least 28 days",
+    "model_answer": "All twelve months have at least 28 days. However, only February has an average length of 28 days in a common year. In a common year, which is any year that is not a leap year, February has 28"
+  },
+  {
+    "id": "reasoning_8",
+    "language": "English",
+    "category": "reasoning",
+    "question": "You are running a race and you pass the person in second place. What place are you in now?",
+    "ground_truth": "Second place",
+    "model_answer": "If you pass the person who is in second place during a race, then you have taken their position. Therefore, you are now in second place yourself."
+  },
+  {
+    "id": "reasoning_9",
+    "language": "English",
+    "category": "reasoning",
+    "question": "Mary's father has five daughters: 1. Nana, 2. Nene, 3. Nini, 4. Nono. What is the name of the fifth daughter?",
+    "ground_truth": "Mary",
+    "model_answer": "The name of the fifth daughter is often given as Nyla or Nena in some variations of this riddle. However, there isn't a definitive answer as the names can vary. The sequence seems to follow a pattern of repeating sy"
+  },
+  {
+    "id": "reasoning_10",
+    "language": "English",
+    "category": "reasoning",
+    "question": "If a rooster lays an egg on the peak of a barn roof, which way will it roll?",
+    "ground_truth": "Roosters don't lay eggs",
+    "model_answer": "Roosters do not lay eggs. Only hens do. So there would be no egg to roll down the barn roof."
+  },
+  {
+    "id": "reasoning_11",
+    "language": "English",
+    "category": "reasoning",
+    "question": "How can a man go eight days without sleep?",
+    "ground_truth": "He sleeps at night",
+    "model_answer": "It is extremely unusual and not biologically possible for a man, or anyone, to go eight days without sleep. The longest recorded period without sleep is approximately 11 days, but this was achieved under closely monitored medical supervision and the"
+  },
+  {
+    "id": "reasoning_12",
+    "language": "English",
+    "category": "reasoning",
+    "question": "What has keys but can't open locks?",
+    "ground_truth": "A piano/keyboard",
+    "model_answer": "The answer to the riddle is a piano. The reasoning behind this is that a piano has keys, but it doesn't function to open locks. Instead, the keys on a piano are used to produce musical notes when struck by hammers"
+  },
+  {
+    "id": "reasoning_13",
+    "language": "English",
+    "category": "reasoning",
+    "question": "I have no doors but I have keys, I have no rooms but I have space. What am I?",
+    "ground_truth": "A keyboard",
+    "model_answer": "A piano. Pianos have keys for playing notes and a large space inside for the hammers to strike the strings. They do not have physical doors or rooms."
+  },
+  {
+    "id": "reasoning_14",
+    "language": "English",
+    "category": "reasoning",
+    "question": "The day before yesterday I was 21, and next year I will be 24. When is my birthday?",
+    "ground_truth": "December 31st",
+    "model_answer": "Your birthday would have been two days ago, as you will be turning 24 next year. So, if today is a day where you would be 21 years old, then your birthday was two days prior to that."
+  },
+  {
+    "id": "reasoning_15",
+    "language": "English",
+    "category": "reasoning",
+    "question": "A farmer has 17 sheep and all but 9 die. How many are left?",
+    "ground_truth": "9 are left",
+    "model_answer": "The farmer is left with 9 sheep. In this phrase, \"all but 9\" means that every sheep except for 9 of them died."
+  },
+  {
+    "id": "reasoning_16",
+    "language": "English",
+    "category": "reasoning",
+    "question": "How many two dollar bills are there in a dozen?",
+    "ground_truth": "12",
+    "model_answer": "A dozen is a unit of measurement that represents 12 items. Two-dollar bills are currency, not a unit of measurement. Therefore, a dozen does not apply to two-dollar bills. There is no such thing as a dozen"
+  },
+  {
+    "id": "reasoning_17",
+    "language": "English",
+    "category": "reasoning",
+    "question": "If you have a bowl with six apples and you take away four, how many do you have?",
+    "ground_truth": "You have 4",
+    "model_answer": "You have four apples. The question asks how many apples are taken away, not how many are left in the bowl. So, the answer is the number of apples taken, which is four. The question might be confusing because it asks"
+  },
+  {
+    "id": "reasoning_18",
+    "language": "English",
+    "category": "reasoning",
+    "question": "What weighs more, a pound of feathers or a pound of bricks?",
+    "ground_truth": "They weigh the same",
+    "model_answer": "Both a pound of feathers and a pound of bricks weigh the same. The term \"pound\" is a unit of weight, so a pound of any material will always weigh one pound."
+  },
+  {
+    "id": "reasoning_19",
+    "language": "English",
+    "category": "reasoning",
+    "question": "Before Mount Everest was discovered, what was the highest mountain in the world?",
+    "ground_truth": "Mount Everest",
+    "model_answer": "Before Mount Everest was discovered and officially recognized as the highest mountain in the world, the highest mountain was variously believed to be one of several other mountains. These included Chhime Lhari or Gyachung Kang in the Himal"
+  },
+  {
+    "id": "reasoning_20",
+    "language": "English",
+    "category": "reasoning",
+    "question": "A plane crashes on the border of the US and Canada. Where do they bury the survivors?",
+    "ground_truth": "You don't bury survivors",
+    "model_answer": "Survivors are not buried. The term \"bury\" is used for the act of putting a deceased person into the ground. Survivors are alive."
+  },
+  {
+    "id": "math_1",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es la suma de 15 y 27?",
+    "ground_truth": "42",
+    "model_answer": "La suma de 15 y 27 es 42.\n\nHere's the calculation:\n15 + 27 = 42"
+  },
+  {
+    "id": "math_2",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Si un tren viaja a 60 mph durante 2.5 horas, \u00bfqu\u00e9 distancia recorre?",
+    "ground_truth": "150 millas (240 kilometros)",
+    "model_answer": "To find the distance traveled by a train moving at a constant speed, you can use the formula:\n\nDistance = Speed * Time\n\nGiven that the train travels at a speed of 60 miles per hour (mph) for"
+  },
+  {
+    "id": "math_3",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Resuelve para x: 3x - 7 = 14",
+    "ground_truth": "x=7",
+    "model_answer": "To find the value of x that makes the equation 3x - 7 = 14 true, follow these steps:\n\n1. Isolate the term with x on one side of the equation.\n2. Add 7 to"
+  },
+  {
+    "id": "math_4",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es la ra\u00edz cuadrada de 144?",
+    "ground_truth": "12",
+    "model_answer": "La ra\u00edz cuadrada de 144 es 12. La expresi\u00f3n 144 es un n\u00famero cuadrado perfecto, ya que 12\u00b2 = 144. Por lo tanto,"
+  },
+  {
+    "id": "math_5",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Si una camisa cuesta $20 y tiene un 15% de descuento, \u00bfcu\u00e1l es el precio final?",
+    "ground_truth": "$17",
+    "model_answer": "To find the final price of the shirt after the discount, you need to calculate the amount of the discount and then subtract it from the original price.\n\nFirst, let's find the discount amount:\n\nDiscount amount = Original"
+  },
+  {
+    "id": "math_6",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es el \u00e1rea de un rect\u00e1ngulo de longitud 8 y ancho 5?",
+    "ground_truth": "40",
+    "model_answer": "To find the area of a rectangle, you can use the formula:\n\nArea = Length * Width\n\nGiven that the length of the rectangle is 8 units and the width is 5 units, the area would be:"
+  },
+  {
+    "id": "math_7",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1ntos grados hay en un tri\u00e1ngulo?",
+    "ground_truth": "180",
+    "model_answer": "Un tri\u00e1ngulo no tiene grados asignados por defecto, ya que su forma se define por la relaci\u00f3n entre los tres \u00e1ngulos que forman sus lados. La suma de los \u00e1ngulos de un tri"
+  },
+  {
+    "id": "math_8",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1nto es 2 elevado a la 5?",
+    "ground_truth": "32",
+    "model_answer": "The value of 2 raised to the power of 5 is calculated as follows:\n\n2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2\n\nMultiplying 2 by itself 5 times:\n\n32"
+  },
+  {
+    "id": "math_9",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Si divides 100 entre 4 y le sumas 15, \u00bfcu\u00e1l es el resultado?",
+    "ground_truth": "40",
+    "model_answer": "To find the result of dividing 100 by 4 and then adding 15, follow these steps:\n\n1. Divide 100 by 4: 100 \u00f7 4 = 2"
+  },
+  {
+    "id": "math_10",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es el per\u00edmetro de un hex\u00e1gono regular con lado de longitud 6?",
+    "ground_truth": "36",
+    "model_answer": "El per\u00edmetro de un hex\u00e1gono regular se puede calcular multiplicando el lado por el n\u00famero de lados y luego multiplicando por la ra\u00edz de 6 para obtener el valor final. El n\u00famero de lados"
+  },
+  {
+    "id": "math_11",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es el 15% de 200?",
+    "ground_truth": "30",
+    "model_answer": "To find 15% of 200, you can use the following formula:\n\n15% of 200 = (15/100) * 200\n\nFirst, convert the percentage"
+  },
+  {
+    "id": "math_12",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Un panadero hace 4 docenas de galletas. \u00bfCu\u00e1ntas galletas son?",
+    "ground_truth": "48",
+    "model_answer": "Each dozen represents 12 unidades, por lo que 4 docenas equivalen a 4 x 12 = 48 galletas. As\u00ed que un panadero hace 48 galletas."
+  },
+  {
+    "id": "math_13",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es el siguiente n\u00famero en la secuencia: 2, 4, 8, 16, ...?",
+    "ground_truth": "32",
+    "model_answer": "El siguiente n\u00famero en la secuencia es 32. Esta secuencia se llama secuencia de potencias de 2, en la que cada n\u00famero siguiente se obtiene multiplicando el n\u00famero anterior por 2"
+  },
+  {
+    "id": "math_14",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Calcula el volumen de un cubo con lado de longitud 3.",
+    "ground_truth": "27",
+    "model_answer": "El volumen de un cubo se calcula multiplicando el lado de cada lado por s\u00ed mismo, dos veces. As\u00ed, el volumen de un cubo con lado de longitud 3 es:\n\nVolumen = L"
+  },
+  {
+    "id": "math_15",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Si y = 2x + 3 y x = 4, \u00bfcu\u00e1l es y?",
+    "ground_truth": "11",
+    "model_answer": "To find the value of y, we need to solve the system of linear equations. First, we can solve one equation for one variable and then substitute that value into the other equation to find the value of y.\n\nLet's solve the"
+  },
+  {
+    "id": "math_16",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es el m\u00e1ximo com\u00fan divisor de 24 y 36?",
+    "ground_truth": "12",
+    "model_answer": "The maximum common divisor of 24 and 36 is 12. To find the maximum common divisor (MCD) of two numbers, you can use the Euclidean algorithm. However, in this case, you"
+  },
+  {
+    "id": "math_17",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1ntos minutos hay en 3.5 horas?",
+    "ground_truth": "210",
+    "model_answer": "To convert hours to minutes, you can use the conversion factor that 1 hour equals 60 minutes. So, to find the number of minutes in 3.5 hours, you can multiply 3.5 by 60:"
+  },
+  {
+    "id": "math_18",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Convierte 5 kil\u00f3metros a metros.",
+    "ground_truth": "5000",
+    "model_answer": "To convert 5 kil\u00f3metros to metros, you can use the conversion factor that 1 kil\u00f3metro equals 1000 metros:\n\n5 kil\u00f3metros = 5 * 1000"
+  },
+  {
+    "id": "math_19",
+    "language": "Spanish",
+    "category": "math",
+    "question": "\u00bfCu\u00e1l es el promedio de 10, 20 y 30?",
+    "ground_truth": "20",
+    "model_answer": "El promedio de los n\u00fameros 10, 20 y 30 se calcula sumando todos los n\u00fameros y dividiendo la suma por el total de n\u00fameros. \n\nPor lo"
+  },
+  {
+    "id": "math_20",
+    "language": "Spanish",
+    "category": "math",
+    "question": "Si una caja contiene 3 bolas rojas y 5 bolas azules, \u00bfcu\u00e1l es la probabilidad de sacar una bola roja?",
+    "ground_truth": "3/8",
+    "model_answer": "To find the probability of drawing a red ball from the box, we need to divide the number of red balls by the total number of balls in the box.\n\nGiven that there are 3 red balls and 5 blue balls, making"
+  },
+  {
+    "id": "factual_1",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es la capital de Francia?",
+    "ground_truth": "Par\u00eds",
+    "model_answer": "La capital de Francia es Par\u00eds. Es la ciudad m\u00e1s grande y m\u00e1s poblada del pa\u00eds, y es conocida por su hermoso paisaje urbano, su arte, su cultura y su historia. Par\u00eds es hog"
+  },
+  {
+    "id": "factual_2",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQui\u00e9n escribi\u00f3 'Romeo y Julieta'?",
+    "ground_truth": "William Shakespeare",
+    "model_answer": "\"Romeo y Julieta\" is a famous play written by the English playwright William Shakespeare. He escribi\u00f3 it around the end of the 16th century, between 1597 and 1598"
+  },
+  {
+    "id": "factual_3",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es el s\u00edmbolo qu\u00edmico del agua?",
+    "ground_truth": "H2O",
+    "model_answer": "El s\u00edmbolo qu\u00edmico de la agua es H2O. Aunque no es un s\u00edmbolo en el sentido tradicional de un s\u00edmbolo qu\u00edmico que represente un elemento qu\u00edmico, H2"
+  },
+  {
+    "id": "factual_4",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfEn qu\u00e9 a\u00f1o se hundi\u00f3 el Titanic?",
+    "ground_truth": "1912",
+    "model_answer": "The RMS Titanic sank on April 15, 1912. It was a British passenger liner that famously struck an iceberg during its maiden voyage from Southampton to New York City, resulting in the deaths"
+  },
+  {
+    "id": "factual_5",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQui\u00e9n fue el primer presidente de los Estados Unidos?",
+    "ground_truth": "George Washington",
+    "model_answer": "The first president of the United States was George Washington. He served two terms from April 30, 1789, to March 4, 1797. Washington was a military leader who played a key role in the"
+  },
+  {
+    "id": "factual_6",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es el planeta m\u00e1s grande de nuestro sistema solar?",
+    "ground_truth": "J\u00fapiter",
+    "model_answer": "The largest planet in our solar system is Jupiter. Jupiter is the fifth planet from the sun and is known for being a gas giant. It is the largest planet in terms of both mass and volume in our solar system. Jupiter has a"
+  },
+  {
+    "id": "factual_7",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1ntos continentes hay en la Tierra?",
+    "ground_truth": "7",
+    "model_answer": "There are seven continents in the world. Here are the names of the continents:\n\n1. \u00c1frica\n2. Europa\n3. Asia\n4. Norteam\u00e9rica\n5. Sudam\u00e9rica\n6. Ant\u00e1"
+  },
+  {
+    "id": "factual_8",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es la sustancia natural m\u00e1s dura de la Tierra?",
+    "ground_truth": "Diamante",
+    "model_answer": "La sustancia natural m\u00e1s dura de la Tierra es el diamante. Los diamantes son formados a partir de carbonato de hidr\u00f3geno, y su dureza se mide en la escala de Mohs,"
+  },
+  {
+    "id": "factual_9",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQui\u00e9n pint\u00f3 la Mona Lisa?",
+    "ground_truth": "Leonardo da Vinci",
+    "model_answer": "La Mona Lisa, una de las obras maestras de arte m\u00e1s famosas del mundo, fue pintada por Leonardo da Vinci entre 1503 y 1517. Leonardo, un artista"
+  },
+  {
+    "id": "factual_10",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQu\u00e9 pa\u00eds es conocido como la Tierra del Sol Naciente?",
+    "ground_truth": "Jap\u00f3n",
+    "model_answer": "The country that is commonly known as the Land of the Rising Sun is Japan. This nickname is due to its eastern location in the world, which causes it to be the first country to see the sun rise each day."
+  },
+  {
+    "id": "factual_11",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es la moneda de Jap\u00f3n?",
+    "ground_truth": "Yen",
+    "model_answer": "La moneda de Jap\u00f3n es el Yen (denominado en singular: \u5186, en plural: \u5186, en romanizados: En). Su s\u00edmbolo monetario es \u00a5."
+  },
+  {
+    "id": "factual_12",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQui\u00e9n descubri\u00f3 la penicilina?",
+    "ground_truth": "Alexander Fleming",
+    "model_answer": "La penicilina fue descubierta accidentalmente por el microbi\u00f3logo escoc\u00e9s Alexander Fleming en septiembre de 1928. Fleming trabajaba en el Laboratorio de Infeccios"
+  },
+  {
+    "id": "factual_13",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es la monta\u00f1a m\u00e1s alta del mundo?",
+    "ground_truth": "Monte Everest",
+    "model_answer": "La monta\u00f1a m\u00e1s alta del mundo es el Monte Everest, que se encuentra en la frontera entre Nepal y China. Tiene una altura de aproximadamente 8.848,86 metros ("
+  },
+  {
+    "id": "factual_14",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQu\u00e9 \u00f3rgano es responsable de bombear la sangre en el cuerpo humano?",
+    "ground_truth": "Coraz\u00f3n",
+    "model_answer": "El coraz\u00f3n es el \u00f3rgano responsable de bombear la sangre en el cuerpo humano. El coraz\u00f3n contruye pulsaciones, bombea sangre a trav\u00e9s de los vasos sangu\u00ed"
+  },
+  {
+    "id": "factual_15",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es el pa\u00eds m\u00e1s peque\u00f1o del mundo por superficie terrestre?",
+    "ground_truth": "Ciudad del Vaticano",
+    "model_answer": "The smallest country in the world by total land area is Vatican City, with an area of approximately 0.2 square miles (0.44 square kilometers). It is an independent city-state enclaved within Rome, Italy"
+  },
+  {
+    "id": "factual_16",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQu\u00e9 elemento tiene el n\u00famero at\u00f3mico 1?",
+    "ground_truth": "Hidr\u00f3geno",
+    "model_answer": "El elemento qu\u00edmico que tiene n\u00famero at\u00f3mico 1 es el hidr\u00f3geno. El n\u00famero at\u00f3mico de un elemento es un n\u00famero que indica el n\u00famero de protones en el n\u00facleo at\u00f3mico"
+  },
+  {
+    "id": "factual_17",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es el idioma oficial de Brasil?",
+    "ground_truth": "Portugu\u00e9s",
+    "model_answer": "El idioma oficial de Brasil es el portugu\u00e9s. Brasil es el pa\u00eds m\u00e1s grande de Am\u00e9rica Latina y casi todo su poblaci\u00f3n habla portugu\u00e9s. Adem\u00e1s, es el idioma m\u00e1s hablado en Am\u00e9rica Lat"
+  },
+  {
+    "id": "factual_18",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfQui\u00e9n fue la primera persona en pisar la luna?",
+    "ground_truth": "Neil Armstrong",
+    "model_answer": "The first person to walk on the moon was Neil Armstrong. He took his first steps on the lunar surface on July 20, 1969, during the Apollo 11 mission. Armstrong famously declared"
+  },
+  {
+    "id": "factual_19",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfCu\u00e1l es el ingrediente principal en el hummus tradicional?",
+    "ground_truth": "Garbanzos",
+    "model_answer": "El ingrediente principal en el hummus tradicional es la cacahas integrales, tambi\u00e9n conocidas como garbanzos blancos, que se cocinan y se hierven antes de procesarlas en una mezcla"
+  },
+  {
+    "id": "factual_20",
+    "language": "Spanish",
+    "category": "factual",
+    "question": "\u00bfEn qu\u00e9 ciudad se encuentra el Coliseo?",
+    "ground_truth": "Roma",
+    "model_answer": "El Coliseo que m\u00e1s conocida es la localizada en Roma, Italia. As\u00ed que, en respuesta a tu pregunta, el Coliseo se encuentra en Roma. Es un famoso anfiteatro romano"
+  },
+  {
+    "id": "reasoning_1",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Si todos los blips son blops, y algunos blops son blurps, \u00bfson todos los blips blurps?",
+    "ground_truth": "No",
+    "model_answer": "Based on the information given, not all blips are blurps. We know that some blops are blurps, but we don't have enough information to determine that all blips are blurps. Blips and blops are two different"
+  },
+  {
+    "id": "reasoning_2",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "A es m\u00e1s alto que B, y B es m\u00e1s alto que C. \u00bfQui\u00e9n es el m\u00e1s bajo?",
+    "ground_truth": "C es el m\u00e1s bajo",
+    "model_answer": "Based on the information given, C is the lowest or the one with the least height compared to A and B."
+  },
+  {
+    "id": "reasoning_3",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Si dejas caer una pluma y una bola de boliche en el vac\u00edo, \u00bfcu\u00e1l toca el suelo primero?",
+    "ground_truth": "Golpean el suelo al mismo tiempo",
+    "model_answer": "La pluma caer\u00e1 m\u00e1s r\u00e1pido debido a que tiene una secci\u00f3n transversal \u00e1rea menor que la bola de bowling. Esto significa que la resistencia del aire que la pluma experimenta"
+  },
+  {
+    "id": "reasoning_4",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Un bate y una pelota cuestan $1.10 en total. El bate cuesta $1.00 m\u00e1s que la pelota. \u00bfCu\u00e1nto cuesta la pelota?",
+    "ground_truth": "La pelota cuesta 5 centavos",
+    "model_answer": "To find the cost of the ball, we can set up an equation using the given information:\n\nLet x be the cost of the ball, and y be the cost of the ball.\n\nWe know that:\nx + y ="
+  },
+  {
+    "id": "reasoning_5",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Si 5 m\u00e1quinas tardan 5 minutos en hacer 5 artefactos, \u00bfcu\u00e1nto tiempo tardar\u00edan 100 m\u00e1quinas en hacer 100 artefactos?",
+    "ground_truth": "5 minutos",
+    "model_answer": "Each machine takes 5 minutes to produce 5 artifacts, so it takes 5 minutes for a machine to produce one artifact. Therefore, 100 machines, each producing one artifact at a time, would take 10"
+  },
+  {
+    "id": "reasoning_6",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "En un lago, hay un \u00e1rea de nen\u00fafares. Cada d\u00eda, el \u00e1rea duplica su tama\u00f1o. Si tarda 48 d\u00edas en cubrir el lago, \u00bfcu\u00e1nto tarda en cubrir la mitad?",
+    "ground_truth": "47 d\u00edas",
+    "model_answer": "Since the area of the lily pads doubles each day, we can use the formula for exponential growth to find out how long it takes to cover half of the lake.\n\nLet's denote the initial area of the lily"
+  },
+  {
+    "id": "reasoning_7",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Algunos meses tienen 31 d\u00edas, \u00bfcu\u00e1ntos tienen 28?",
+    "ground_truth": "Los 12 meses tienen al menos 28 d\u00edas",
+    "model_answer": "The months that have 28 days with certainty are January, March, April, May, June, July, August, and October. September, November, and December may have 29 days in a leap year, but they usually have"
+  },
+  {
+    "id": "reasoning_8",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Est\u00e1s corriendo una carrera y rebasas a la persona en el segundo lugar. \u00bfEn qu\u00e9 lugar est\u00e1s ahora?",
+    "ground_truth": "Segundo lugar",
+    "model_answer": "If you're running a race and you pass the person in second place, then you are now in second place yourself."
+  },
+  {
+    "id": "reasoning_9",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "El padre de Mar\u00eda tiene cinco hijas: 1. Nana, 2. Nene, 3. Nini, 4. Nono. \u00bfCu\u00e1l es el nombre de la quinta hija?",
+    "ground_truth": "Mar\u00eda",
+    "model_answer": "The name of the fifth daughter is not provided in the given information. The names given are Nana, Nene, Nini, and Nono for the first through fourth daughters, respectively. Therefore, we cannot determine the name of the fifth daughter"
+  },
+  {
+    "id": "reasoning_10",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Si un gallo pone un huevo en la cima del techo de un granero, \u00bfhacia d\u00f3nde rodar\u00e1?",
+    "ground_truth": "Los gallos no ponen huevos",
+    "model_answer": "I'm here to help answer your question, but it seems there's a small issue with the given situation. Chickens don't lay eggs on rooftops or any surface other than a nesting box. So, the question"
+  },
+  {
+    "id": "reasoning_11",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "\u00bfC\u00f3mo puede un hombre pasar ocho d\u00edas sin dormir?",
+    "ground_truth": "Duerme por la noche",
+    "model_answer": "It's extremely rare and not biologically possible for a person to go without sleeping for eight days or more without the use of drugs or other unnatural means. The longest recorded period without sleep is approximately 11 days, but the person experienced"
+  },
+  {
+    "id": "reasoning_12",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "\u00bfQu\u00e9 tiene teclas pero no puede abrir cerraduras?",
+    "ground_truth": "Un piano/teclado",
+    "model_answer": "La respuesta es: un teclado. Las teclas son dispositivos que permiten a un usuario introducir informaci\u00f3n en un ordenador o otro dispositivo electr\u00f3nico mediante el presionamiento de"
+  },
+  {
+    "id": "reasoning_13",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "No tengo puertas pero tengo teclas, no tengo habitaciones pero tengo espacio. \u00bfQu\u00e9 soy?",
+    "ground_truth": "Un teclado",
+    "model_answer": "The answer to this riddle is a piano. The reasoning behind this is that a piano does not have physical doors or rooms, but it does have keys (teclas in Spanish) that you press to produce sound, and it has a large"
+  },
+  {
+    "id": "reasoning_14",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Antes de ayer ten\u00eda 21 a\u00f1os, y el a\u00f1o que viene tendr\u00e9 24. \u00bfCu\u00e1ndo es mi cumplea\u00f1os?",
+    "ground_truth": "31 de diciembre",
+    "model_answer": "Your birthday is next year, on your 22nd anniversary. Since you turn 24 years old the year after next, and you were 21 years old before yesterday, your birthday must be between those two dates. Therefore, your"
+  },
+  {
+    "id": "reasoning_15",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Un granjero tiene 17 ovejas y mueren todas menos 9. \u00bfCu\u00e1ntas quedan?",
+    "ground_truth": "Quedan 9",
+    "model_answer": "Quedan 9 ovejas. La pregunta indica que mueren todas menos 9, por lo que el n\u00famero de ovejas que queden vivas es de 9."
+  },
+  {
+    "id": "reasoning_16",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "\u00bfCu\u00e1ntos billetes de dos d\u00f3lares hay en una docena?",
+    "ground_truth": "12",
+    "model_answer": "En realidad, el t\u00e9rmino \"docena\" se refiere a una cantidad de doce unidades. Sin embargo, en el contexto de la moneda, no existen billetes de dos d\u00f3lares"
+  },
+  {
+    "id": "reasoning_17",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Si tienes un taz\u00f3n con seis manzanas y te llevas cuatro, \u00bfcu\u00e1ntas tienes?",
+    "ground_truth": "Tienes 4",
+    "model_answer": "If you have a bowl with six apples and you take four, you will have four apples left. The question asks how many apples you have after taking four from the original six, so the answer is four apples. The initial number"
+  },
+  {
+    "id": "reasoning_18",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "\u00bfQu\u00e9 pesa m\u00e1s, una libra de plumas o una libra de ladrillos?",
+    "ground_truth": "Pesan lo mismo",
+    "model_answer": "Both a pound of feathers and a pound of bricks have the same weight. The difference between them lies in their volume or space they occupy. A pound of feathers takes up much more space than a pound of bricks."
+  },
+  {
+    "id": "reasoning_19",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Antes de que se descubriera el Monte Everest, \u00bfcu\u00e1l era la monta\u00f1a m\u00e1s alta del mundo?",
+    "ground_truth": "Monte Everest",
+    "model_answer": "Before the discovery of Mount Everest, it is not possible to identify with certainty which mountain was considered the highest in the world. The height of mountains was not accurately measured until the late 18th and 19th centuries, and"
+  },
+  {
+    "id": "reasoning_20",
+    "language": "Spanish",
+    "category": "reasoning",
+    "question": "Un avi\u00f3n se estrella en la frontera de EE. UU. y Canad\u00e1. \u00bfD\u00f3nde entierran a los sobrevivientes?",
+    "ground_truth": "No se entierra a los sobrevivientes",
+    "model_answer": "I. Introducci\u00f3n\n\nEn este texto, vamos a responder a una pregunta relacionada con un accidente a\u00e9reo ocurrido en la frontera entre Estados Unidos y Canad\u00e1 y tratar de"
+  },
+  {
+    "id": "math_1",
+    "language": "Basque",
+    "category": "math",
+    "question": "15 eta 27ren batura zer da?",
+    "ground_truth": "42",
+    "model_answer": "I'm sorry, I cannot understand the meaning of \"15 eta 27ren batura zer da?\" without additional context. It appears to be written in Basque, a language spoken in the Basque Country, but I"
+  },
+  {
+    "id": "math_2",
+    "language": "Basque",
+    "category": "math",
+    "question": "Tren bat 60 mph abiaduran 2,5 orduz bidaiatzen badu, zenbat urrun joango da?",
+    "ground_truth": "150",
+    "model_answer": "I'm assuming you're asking how long it takes for a train that travels at 60 mph to cover a distance of 2.5 miles. To find the answer, we can use the formula:\n\ntime = distance"
+  },
+  {
+    "id": "math_3",
+    "language": "Basque",
+    "category": "math",
+    "question": "x = 7",
+    "ground_truth": "x = 7",
+    "model_answer": "I see that you have assigned the value 7 to the variable `x`. If you have a specific question or operation you'd like to perform with this variable, please let me know and I'll do my best to help you out."
+  },
+  {
+    "id": "math_4",
+    "language": "Basque",
+    "category": "math",
+    "question": "144ren erro karratua zer da?",
+    "ground_truth": "12",
+    "model_answer": "I'm sorry, I cannot understand your question as it is written in Basque language and I don't have enough context to provide an accurate response. Could you please provide some additional information or translate it into English?"
+  },
+  {
+    "id": "math_5",
+    "language": "Basque",
+    "category": "math",
+    "question": "T-shirt batek 20 dolarreko kostua badu eta %15eko deskontua badago, zein da azken prezioa?",
+    "ground_truth": "17",
+    "model_answer": "To find the final price of a T-shirt after a 15% discount, you need to know the original price of the T-shirt first. Let's call the original price \"x\". The discount amount is 15%"
+  },
+  {
+    "id": "math_6",
+    "language": "Basque",
+    "category": "math",
+    "question": "Zer da 8 luzera eta 5 zabalera duen laukizuzenaren azalera?",
+    "ground_truth": "40",
+    "model_answer": "Ezaguteko, \"Zer da 8 lumen eta 5 squares in a row\"-a gaitza, haundi baina ez da ezabtero euskara."
+  },
+  {
+    "id": "math_7",
+    "language": "Basque",
+    "category": "math",
+    "question": "Zenbat gradu daude triangelu batean?",
+    "ground_truth": "180",
+    "model_answer": "I'm sorry for the confusion, but your question is not clear without additional context. The phrase \"Zenbat gradu daude triangularu batean?\" is not a standard question in any language I'm familiar with. It seems"
+  },
+  {
+    "id": "math_8",
+    "language": "Basque",
+    "category": "math",
+    "question": "2 5. potentzian zenbat da?",
+    "ground_truth": "32",
+    "model_answer": "I'm sorry, I cannot understand the question as it is written in an unfamiliar language. Could you please provide the question in English or a more commonly used language? I'll be happy to help with any mathematical or scientific question you might"
+  },
+  {
+    "id": "math_9",
+    "language": "Basque",
+    "category": "math",
+    "question": "100 4rekin banatzen baduzu eta 15 gehitzen badiozu, zer da emaitza?",
+    "ground_truth": "40",
+    "model_answer": "The given Basque sentence can be translated to English as \"100 sheep and 15 goats, how many animals in total?\" The answer is 115 animals. In Basque, \"sheep\" is \"rekin"
+  },
+  {
+    "id": "math_10",
+    "language": "Basque",
+    "category": "math",
+    "question": "Zer da 6ko aldea duen hexagono erregular baten perimetroa?",
+    "ground_truth": "36",
+    "model_answer": "I'd be happy to help you find the number of regular hexagons that can fit in a circle with a given perimeter. However, I'll need to provide you with the answer in Basque, as that is the language of"
+  },
+  {
+    "id": "math_11",
+    "language": "Basque",
+    "category": "math",
+    "question": "Zer da 200en %15?",
+    "ground_truth": "30",
+    "model_answer": "To find 15% of 200, you can use the following formula:\n\n15% of 200 = (15/100) * 200\n\nFirst, convert the percentage"
+  },
+  {
+    "id": "math_12",
+    "language": "Basque",
+    "category": "math",
+    "question": "Labe-gile batek 4 dozena cookie egiten ditu. Zenbat cookie dira horiek?",
+    "ground_truth": "48",
+    "model_answer": "I'd be happy to help you calculate how many cookies are in 4 dozens. A dozen is a unit of measurement that represents 12 items. So, 4 dozens is equal to 4 x 12 = 48"
+  },
+  {
+    "id": "math_13",
+    "language": "Basque",
+    "category": "math",
+    "question": "Zein da sekuentziako hurrengo zenbakia: 2, 4, 8, 16, ...?",
+    "ground_truth": "32",
+    "model_answer": "This sequence is called 2^n sequence or 2 raised to the power of n sequence. The next number in the sequence would be 32 (which is 2^5). So the complete sequence would be: 2,"
+  },
+  {
+    "id": "math_14",
+    "language": "Basque",
+    "category": "math",
+    "question": "Kalkulatu 3 aldeko kubo baten bolumena.",
+    "ground_truth": "27",
+    "model_answer": "I'm an AI language model and I don't have the ability to perform calculations directly. However, I can help you with the calculation if you provide me with the numbers and the mathematical operation. For example, if you want to find the"
+  },
+  {
+    "id": "math_15",
+    "language": "Basque",
+    "category": "math",
+    "question": "y = 2(4) + 3, beraz y = 8 + 3, y = 11.",
+    "ground_truth": "11",
+    "model_answer": "The expression \"2(4) + 3\" is equivalent to \"2 times 4 plus 3,\" which can be calculated as follows:\n\n1. Multiply 2 and 4: 2 * 4 ="
+  },
+  {
+    "id": "math_16",
+    "language": "Basque",
+    "category": "math",
+    "question": "24 eta 36ren arteko handiena komunean zatitzailea zer da?",
+    "ground_truth": "12",
+    "model_answer": "I'm an AI language model and I don't have the ability to directly understand or translate Basque. However, I can help you with a rough English translation of the given Basque phrase using a dictionary and some context.\n\nThe"
+  },
+  {
+    "id": "math_17",
+    "language": "Basque",
+    "category": "math",
+    "question": "Zenbat minutu daude 3,5 orduetan?",
+    "ground_truth": "210",
+    "model_answer": "I'm sorry for the confusion, but your question is not clear without additional context. The term \"Zenbat minutu\" is not a standard term in English or in Basque, the language you seem to be using. Could you please"
+  },
+  {
+    "id": "math_18",
+    "language": "Basque",
+    "category": "math",
+    "question": "5 kilometro metro bihurtu.",
+    "ground_truth": "5000",
+    "model_answer": "I'm sorry for the confusion, but your query seems to be in an unfamiliar language. Based on the context, it appears to be a combination of words from different languages. Let me try to break it down:\n\n- \"5"
+  },
+  {
+    "id": "math_19",
+    "language": "Basque",
+    "category": "math",
+    "question": "10, 20 eta 30en batezbestekoa zer da?",
+    "ground_truth": "20",
+    "model_answer": "I'm sorry for the unclear question. Could you please provide some context or translate it into a language I can understand? Based on the given words, it seems like you might be asking about equipment or supplies for 10, 2"
+  },
+  {
+    "id": "math_20",
+    "language": "Basque",
+    "category": "math",
+    "question": "Kutxa batek 3 bola gorrirekin eta 5 bola urdinekin badu, zein da bola gorria ateratzeko probabilitatea?",
+    "ground_truth": "3/8",
+    "model_answer": "To calculate the probability of drawing three red balls and five blue balls from a group of balls, we need to know the total number of balls and the number of red and blue balls in the group. Let's assume there are 10 balls"
+  },
+  {
+    "id": "factual_1",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Frantziako hiriburua zein da?",
+    "ground_truth": "Paris",
+    "model_answer": "Ez da Frantziako hiriburua, batzuko Frantsia haukizun zaitzuko duzun herriak, engeltsen zaharra haukizun"
+  },
+  {
+    "id": "factual_2",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Nor idatzi zuen 'Romeo eta Julieta'?",
+    "ground_truth": "William Shakespeare",
+    "model_answer": "Ezabutu zurea, \"Romeo eta Julieta\" ongi etorri da. Haukizuna, haukizun zurea, \"Romeo and Juliet\" on"
+  },
+  {
+    "id": "factual_3",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zer da uraren ikurra?",
+    "ground_truth": "H2O",
+    "model_answer": "I'm sorry, I don't understand the meaning of \"Zer da uraren ikurra?\" It seems to be in Basque language, but I'm unable to translate it without additional context. Could you please provide more information"
+  },
+  {
+    "id": "factual_4",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Noiz urperatu zen Titanic?",
+    "ground_truth": "1912",
+    "model_answer": "I'm sorry for the confusion, but your question is not clear without additional context. Here are some possible interpretations:\n\n1. Are you asking who wrote the score for the Titanic movie? If so, the answer is James"
+  },
+  {
+    "id": "factual_5",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Nor izan zen Estatu Batuetako lehen presidentea?",
+    "ground_truth": "George Washington",
+    "model_answer": "I'm an artificial intelligence and don't have the ability to be the president of any organization, including the Basque Country's Estatu Batuak (Basque Nationalist Party). I can help answer questions about the party or provide"
+  },
+  {
+    "id": "factual_6",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zer da gure eguzki sistemako planeta handiena?",
+    "ground_truth": "Jupiter",
+    "model_answer": "I'm an AI language model and don't have the ability to directly access or manipulate physical systems, including planetary ones. However, I can help answer questions about planetary systems based on available information. If you're asking about"
+  },
+  {
+    "id": "factual_7",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zenbat kontinente daude Lurrean?",
+    "ground_truth": "7",
+    "model_answer": "I'm sorry for the confusion, but your question seems to be in Basque language and it's not clear what you mean by \"Zenbat kontinente daude Lurrean?\". Could you please provide some context or"
+  },
+  {
+    "id": "factual_8",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zer da Lurreko substantzia natural gogorrena?",
+    "ground_truth": "Diamantea",
+    "model_answer": "I'm an artificial intelligence and don't have the ability to directly experience or perceive the physical world. I can't speak Basque, but I can try to help you with a translation. The Basque phrase \"Zer da"
+  },
+  {
+    "id": "factual_9",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Nor pintatu zuen Mona Lisa?",
+    "ground_truth": "Leonardo da Vinci",
+    "model_answer": "I'm sorry for the confusion, but your question is not clear without additional context. The phrase \"Nor pintatu zuen Mona Lisa\" is not a standard phrase in any language that I'm familiar with, and it doesn'"
+  },
+  {
+    "id": "factual_10",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zein herrialde da Eguzkiaren Lurraldea bezala ezaguna?",
+    "ground_truth": "Japonia",
+    "model_answer": "I'm an artificial intelligence and don't have the ability to speak or understand Basque language fluently. However, I can provide a rough translation of your question using a Basque-English dictionary: \"Does Zein herrialde ("
+  },
+  {
+    "id": "factual_11",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Japoniako moneta zein da?",
+    "ground_truth": "Yen",
+    "model_answer": "I'm an artificial intelligence and don't have the ability to physically possess or use money. I can't answer the question with a yes or no because it's not applicable to me. However, I can tell you that \"J"
+  },
+  {
+    "id": "factual_12",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Nor aurkitu zuen penizilina?",
+    "ground_truth": "Alexander Fleming",
+    "model_answer": "I'm an artificial intelligence and don't have the ability to take or consume medications. However, I can help answer questions about penicillin or provide information on how it is used to treat infections. Penicillin is a"
+  },
+  {
+    "id": "factual_13",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zer da munduko mendirik altuena?",
+    "ground_truth": "Everest mendia",
+    "model_answer": "I'm sorry for the confusion, but I cannot understand the question as it is written in Basque, a language I do not speak fluently. The question seems to be incomplete and contains some misspelled words. Could you please provide"
+  },
+  {
+    "id": "factual_14",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zer organo da giza gorputzean odola ponpatzeaz arduratzen dena?",
+    "ground_truth": "Bihotza",
+    "model_answer": "I'm sorry for the garbled query. Could you please provide a clearer question in English, so I can help you with an accurate answer? If you're asking about the Organ of the Great Pyramid of Giza and its"
+  },
+  {
+    "id": "factual_15",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Munduko lurralde-azalera txikiena duen herrialdea zein da?",
+    "ground_truth": "Vatikano Hiria",
+    "model_answer": "Euskaran haukiz, \"Munduko lurralde-azalera duen herrialdea zen da?\" zaitzuko duen haundi baina, \"Which is the"
+  },
+  {
+    "id": "factual_16",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zein elementuk du 1eko atomoko zenbakia?",
+    "ground_truth": "Hidrogenoa",
+    "model_answer": "I'm an artificial intelligence and don't have the ability to speak or understand Basque as a native language. However, I can try to help you with a translation. The question you've asked seems to be \"Do you understand one"
+  },
+  {
+    "id": "factual_17",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Brasilgo hizkuntza ofiziala zein da?",
+    "ground_truth": "Portugesa",
+    "model_answer": "I'm an artificial intelligence language model and I don't have the ability to know the official language of Brasilgo as I don't have access to real-time information or the ability to browse the web. However, I can tell"
+  },
+  {
+    "id": "factual_18",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Nor izan zen ilargian ibili zen lehen pertsona?",
+    "ground_truth": "Neil Armstrong",
+    "model_answer": "I'm sorry for the confusion, but I cannot understand the question as it is written in Basque, a language I do not speak fluently. The question seems to be incomplete and contains some misspelled words. Could you please provide"
+  },
+  {
+    "id": "factual_19",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Zer da tradizionala den humusaren osagai nagusia?",
+    "ground_truth": "Txitxirioak",
+    "model_answer": "I'm an AI language model and don't have the ability to understand or speak Basque directly. However, I can help you with translations. The question you've asked seems to be in Basque, but it's not"
+  },
+  {
+    "id": "factual_20",
+    "language": "Basque",
+    "category": "factual",
+    "question": "Non dago Koliseoa?",
+    "ground_truth": "Erroma",
+    "model_answer": "Ez, engaitzatuko ez dago basque-a. \"Non dago\" in Basque means \"there is not\" or \"there isn't.\" In this context, the question seems to be asking if"
+  },
+  {
+    "id": "reasoning_1",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Bloop guztiak blip badira, eta blop batzuk blurp badira, blip guztiak blurp al dira?",
+    "ground_truth": "Ez",
+    "model_answer": "I'm sorry for the confusion, but the given text appears to be written in a made-up language or a code. Without a clear translation or explanation, it's impossible for me to provide an accurate response. Could you please provide some"
+  },
+  {
+    "id": "reasoning_2",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "C da laburrena.",
+    "ground_truth": "C da laburrena.",
+    "model_answer": "I'm sorry, I don't understand the meaning of \"C da laburrena\" without additional context. Could you please provide more information or clarify the phrase? It appears to be in a language other than English, and I'"
+  },
+  {
+    "id": "reasoning_3",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Hegazti bat eta bolatxo bat hutsune batean jaurtitzen badituzu, zein iristen da lehenik lurra?",
+    "ground_truth": "Aldi berean iristen dira.",
+    "model_answer": "Euskaran haukiz, \"Hegazti bat eta bolatxo bat hutsune batean jaurtitzen badituzu, zein iristen da lehenik lurra?\" zait"
+  },
+  {
+    "id": "reasoning_4",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Batekin eta baloi batekin 1,10 $ kostatzen dira guztira. Batek 1,00 $ gehiago baloiak baino. Zenbat balio du baloiak?",
+    "ground_truth": "5 zentimo",
+    "model_answer": "To find out how many baloi (baskets) you can buy with a total cost of 1,10 dollars and each balo costing 1,01 dollars, we can use the following formula:\n\nNumber of"
+  },
+  {
+    "id": "reasoning_5",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "100 makina 100 widget egiteko zenbat denbora beharko luke? 5 makina 5 minututan 5 widget egiten baditu, 100 makina 100 widget egiteko 5 minutuko denbora beharko luke.",
+    "ground_truth": "5",
+    "model_answer": "The given information states that 100 machines can produce 100 widgets in 5 minutes. If 5 machines can produce 5 widgets in 5 minutes, we can find the production rate of one machine and then calculate"
+  },
+  {
+    "id": "reasoning_6",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Laku batean, lili-lapikoen patch bat dago. Egunero, patch-a bikoizten da. 48 egun behar badira laku osoa estaltzeko, zenbat denbora behar da erdia estaltzeko?",
+    "ground_truth": "47",
+    "model_answer": "Ez dago haukizun zurea, ondorekin zure izena eta zure batean zurea eguna da. Lakuko batean, 48 egun behar"
+  },
+  {
+    "id": "reasoning_7",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Hilek 31 egun dituzte, zenbat dute 28?",
+    "ground_truth": "12",
+    "model_answer": "The question seems to be in Basque language, but it's not clear what it means without additional context. Here's a possible interpretation: \"On the 31st day, how many are there (or what do you have)"
+  },
+  {
+    "id": "reasoning_8",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Bigarren postuan dagoen pertsona gainditzen duzunean, zein postutan zaude orain?",
+    "ground_truth": "Bigarren postuan",
+    "model_answer": "Ez, I'm an artificial intelligence and don't have the ability to physically go to a specific location or interact with people in real life. I can only process and generate text based on the information provided to me. In Basque,"
+  },
+  {
+    "id": "reasoning_9",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Maryren aita bost alaba ditu: 1. Nana, 2. Nene, 3. Nini, 4. Nono. Zein da bosgarren alabaren izena?",
+    "ground_truth": "Mary",
+    "model_answer": "I'm sorry for the confusion, but the given text seems to be written in Basque language, which I don't speak fluently. However, I can try to help you with the translation of the given words using online resources."
+  },
+  {
+    "id": "reasoning_10",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Oilarrak oilaskoa jartzen badu biltegi baten teilatuaren gailurrean, zein norabidetan irristatuko da?",
+    "ground_truth": "Oilarrak ez dute arrautzarik jartzen.",
+    "model_answer": "Euskaran haundi, Oilarrak oilaskoa jartzen badu biltegi baten teilatuaren gailurrean, \"Oilarrak oilaskoa jartzen badu\" (o"
+  },
+  {
+    "id": "reasoning_11",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Nola izan daiteke gizon batek zortzi egun lo gabe?",
+    "ground_truth": "Gauetan lo egiten du.",
+    "model_answer": "Ez dago haukizuna, \"Nola izan daiteke gizon batek zortzi egun lo gabe?\" ondorekin batua. \"Nola izan daiteke gizon\""
+  },
+  {
+    "id": "reasoning_12",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Zer dauka giltzak baina ezin ditu itxi ireki?",
+    "ground_truth": "Pianoa",
+    "model_answer": "I'm sorry for the confusion, but I cannot directly answer your question without additional context. The Basque phrase you provided, \"Zer dauka giltzak baina ezin ditu itxi ireki,\" transl"
+  },
+  {
+    "id": "reasoning_13",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Ez dut ateik baina giltzak ditut, ez dut gelarik baina espazioa dut. Zer naiz?",
+    "ground_truth": "Teklatua",
+    "model_answer": "I'm sorry for the confusion, but the given Basque text seems to be incomplete and contains some errors. Here's a possible interpretation:\n\n\"I don't understand what you said, I don't know what you"
+  },
+  {
+    "id": "reasoning_14",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Nahia aurreko egunean 21 urte nituen, eta hurrengo urtean 24 izango naiz. Noiz da nire urtebetetzea?",
+    "ground_truth": "Abenduaren 31",
+    "model_answer": "Ez da, eta haukizun zaitasun zerbitzaria eguna izan da. Haukizun 21 urte nabarri da, eta 24 urtean"
+  },
+  {
+    "id": "reasoning_15",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Etxe-aberats batek 17 ardi ditu eta 9 salbu, gainerakoak hiltzen dira. Zenbat geratzen dira?",
+    "ground_truth": "9",
+    "model_answer": "The Basque phrase you provided translates to \"In a house there are 17 adults and 9 children, how many people are there in total?\"\n\nTo find the total number of people in the house, you can add the number"
+  },
+  {
+    "id": "reasoning_16",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Hamabi dolarreko txekorik zenbat dago?",
+    "ground_truth": "12",
+    "model_answer": "Euskara (Basque) isn't one of the languages I'm programmed to understand fluently. The phrase you've given me, \"Hamabi dolarreko txekorik zenbat dago?"
+  },
+  {
+    "id": "reasoning_17",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Sei sagar dituen ontzi bat baduzu eta lau kendu badituzu, zenbat duzu?",
+    "ground_truth": "4",
+    "model_answer": "\"Sei sagar dituen ontzi bat baduzu eta lau kendu badituzu, zenbat duzu?\" translates to \"What do you mean by 'Sei sagar dituen ont"
+  },
+  {
+    "id": "reasoning_18",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Zer da gehiago pisatzen, kilo bat lumak ala kilo bat adreilu?",
+    "ground_truth": "Berdin pisatzen dute.",
+    "model_answer": "I'm sorry for the confusion, but your question seems to be in Basque language with some misspellings. I assume you are asking: \"How much does it weigh, a kilo or two less?\"\n\nTo answer your"
+  },
+  {
+    "id": "reasoning_19",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Everest mendiaren aurretik, zein zen munduko mendirik altuena?",
+    "ground_truth": "Everest mendia",
+    "model_answer": "Euskaran haukiz, \"Everest mendiaren aurretik, zein zen munduko mendirik altuena?\" eratuz zaitzuko dira, \"E"
+  },
+  {
+    "id": "reasoning_20",
+    "language": "Basque",
+    "category": "reasoning",
+    "question": "Hegazkin bat AEBetako eta Kanadako mugan erori da. Non lurperatzen dituzte bizirik irauten dutenak?",
+    "ground_truth": "Ez dira bizirik irauten dutenak lurperatzen.",
+    "model_answer": "Ez, eta zurea haukizuna engaitzatuko dira, azterketa ez dira haukizunaren erabiltzailea. Haukizunaren er"
+  }
+]
