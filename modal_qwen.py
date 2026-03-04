@@ -1,24 +1,25 @@
 """
-modal_bloom.py — Modal GPU app for Mistral-7B-Instruct-v0.2 inference,
+modal_qwen.py — Modal GPU app for Qwen/Qwen2-7B-Instruct inference,
 hidden states extraction, and logit lens.
 
-Model specs: 32 transformer layers, d_model=4096, vocab=32000
+Model specs: 28 transformer layers, d_model=3584, vocab=152064
+Public model — no HF token required.
 
 Usage:
     pip install modal
     modal setup          # one-time browser auth
-    modal run modal_bloom.py
+    modal run modal_qwen.py
 
 Outputs (written locally):
-    mistral_inference_results.json   — for step1.py accuracy evaluation
-    mistral_hidden_states.json       — for multilingual_analysis_large.ipynb RSA
-    mistral_logit_lens_results.json  — for multilingual_analysis_large.ipynb logit lens
+    qwen_inference_results.json   — for step1.py accuracy evaluation
+    qwen_hidden_states.json       — for multilingual_analysis_large.ipynb RSA
+    qwen_logit_lens_results.json  — for multilingual_analysis_large.ipynb logit lens
 """
 
 import json
 import modal
 
-app = modal.App("mistral-multilingual")
+app = modal.App("qwen-multilingual")
 
 image = (
     modal.Image.debian_slim(python_version="3.11")
@@ -31,19 +32,24 @@ image = (
     )
 )
 
-MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
+MODEL_NAME = "Qwen/Qwen2-7B-Instruct"
 MODEL_CACHE_DIR = "/model_cache"
 
-model_volume = modal.Volume.from_name("mistral-weights-cache", create_if_missing=True)
+model_volume = modal.Volume.from_name("qwen-weights-cache", create_if_missing=True)
 
 
-def _format_prompt(question: str) -> str:
-    """Mistral instruct format."""
-    return f"<s>[INST] {question} [/INST]"
+def _format_prompt(question: str, tokenizer) -> str:
+    """Qwen2-Instruct chat template format."""
+    messages = [{"role": "user", "content": question}]
+    return tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+    )
 
 
 def _load_model():
-    """Load Mistral-7B-Instruct-v0.2 in float16 on GPU."""
+    """Load Qwen/Qwen2-7B-Instruct in float16 on GPU."""
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -58,27 +64,12 @@ def _load_model():
     return model, tokenizer
 
 
-@app.function(
-    image=image,
-    gpu="A100",
-    volumes={MODEL_CACHE_DIR: model_volume},
-    timeout=900,
-    memory=20480,
-)
-def run_inference(questions: list[dict]) -> list[dict]:
-    """
-    Greedy-decode each question with Mistral-7B-Instruct-v0.2.
-
-    Returns list of dicts with model_answer field.
-    """
+def _run_inference(model, tokenizer, questions):
     import torch
-
-    model, tokenizer = _load_model()
-    model_volume.commit()
 
     results = []
     for item in questions:
-        prompt = _format_prompt(item["question"])
+        prompt = _format_prompt(item["question"], tokenizer)
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
         with torch.no_grad():
             output_ids = model.generate(
@@ -97,37 +88,19 @@ def run_inference(questions: list[dict]) -> list[dict]:
             "ground_truth": item.get("ground_truth", ""),
             "model_answer": answer,
         })
-
     return results
 
 
-@app.function(
-    image=image,
-    gpu="A100",
-    volumes={MODEL_CACHE_DIR: model_volume},
-    timeout=900,
-    memory=20480,
-)
-def run_hidden_states(questions: list[dict]) -> list[dict]:
-    """
-    Extract residual stream hidden states at every layer for each question.
-
-    Mistral-7B-Instruct-v0.2: 32 transformer layers, d_model=4096.
-    Returns hidden_states: (n_layers, d_model) per question, JSON-serializable.
-    """
+def _run_hidden_states(model, tokenizer, questions):
     import torch
-
-    model, tokenizer = _load_model()
-    model_volume.commit()
 
     results = []
     for item in questions:
-        prompt = _format_prompt(item["question"])
+        prompt = _format_prompt(item["question"], tokenizer)
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
         with torch.no_grad():
             outputs = model(**inputs, output_hidden_states=True)
 
-        # hidden_states: tuple of (n_layers+1) tensors — index 0 = embedding
         vecs = []
         for h in outputs.hidden_states[1:]:
             last_token_vec = h[0, -1, :].float().cpu().numpy().tolist()
@@ -137,42 +110,22 @@ def run_hidden_states(questions: list[dict]) -> list[dict]:
             "id": item["id"],
             "language": item["language"],
             "category": item["category"],
-            "hidden_states": vecs,  # (n_layers, d_model)
+            "hidden_states": vecs,
         })
-
     return results
 
 
-@app.function(
-    image=image,
-    gpu="A100",
-    volumes={MODEL_CACHE_DIR: model_volume},
-    timeout=900,
-    memory=20480,
-)
-def run_logit_lens(questions: list[dict]) -> list[dict]:
-    """
-    Run logit lens analysis on Mistral-7B-Instruct-v0.2 for each question.
-
-    Mistral uses LlamaForCausalLM-style architecture:
-      logit lens projection = model.lm_head(model.model.norm(h))
-
-    Records rank of GT first token and top-1 probability at every layer.
-    """
+def _run_logit_lens(model, tokenizer, questions):
     import torch
 
-    model, tokenizer = _load_model()
-    model_volume.commit()
-
     def gt_first_token_id(ground_truth: str):
-        # Mistral tokenizer: leading space helps get the right token
         ids = tokenizer.encode(" " + ground_truth.strip(), add_special_tokens=False)
         return ids[0] if ids else None
 
     results = []
     for item in questions:
         gt_token_id = gt_first_token_id(item.get("ground_truth", ""))
-        prompt = _format_prompt(item["question"])
+        prompt = _format_prompt(item["question"], tokenizer)
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
         with torch.no_grad():
@@ -182,10 +135,9 @@ def run_logit_lens(questions: list[dict]) -> list[dict]:
         top1_probs = []
 
         for h in outputs.hidden_states[1:]:
-            h_last = h[0, -1, :]  # keep float16 — norm + lm_head weights are float16
-            # Mistral/LlamaForCausalLM logit lens: model.model.norm + model.lm_head
+            h_last = h[0, -1, :]
             logits = model.lm_head(model.model.norm(h_last))
-            probs = logits.float().softmax(dim=-1)  # cast to float32 for softmax stability
+            probs = logits.float().softmax(dim=-1)
 
             top1_probs.append(probs.max().item())
 
@@ -203,8 +155,40 @@ def run_logit_lens(questions: list[dict]) -> list[dict]:
             "ranks": ranks,
             "top1_probs": top1_probs,
         })
-
     return results
+
+
+@app.function(
+    image=image,
+    gpu="A100",
+    volumes={MODEL_CACHE_DIR: model_volume},
+    timeout=2700,
+    memory=20480,
+)
+def run_all(questions: list[dict]) -> tuple[list, list, list]:
+    """
+    Run inference, hidden states, and logit lens in a single container.
+    Model loads once — no repeated downloads between jobs.
+    Returns (inference_results, hidden_states_results, logit_lens_results).
+    """
+    print("Loading model...")
+    model, tokenizer = _load_model()
+    model_volume.commit()  # persist weights to volume for future runs
+    print("Model loaded.")
+
+    print("[1/3] Running inference...")
+    inference = _run_inference(model, tokenizer, questions)
+    print(f"  Done ({len(inference)} entries)")
+
+    print("[2/3] Running hidden states...")
+    hidden = _run_hidden_states(model, tokenizer, questions)
+    print(f"  Done ({len(hidden)} entries)")
+
+    print("[3/3] Running logit lens...")
+    logit = _run_logit_lens(model, tokenizer, questions)
+    print(f"  Done ({len(logit)} entries)")
+
+    return inference, hidden, logit
 
 
 # ── Local entrypoint ──────────────────────────────────────────────────────────
@@ -212,7 +196,7 @@ def run_logit_lens(questions: list[dict]) -> list[dict]:
 @app.local_entrypoint()
 def run_all_jobs():
     """
-    Load all 3 JSONL files, run all three GPU jobs, write output JSON files.
+    Load all 3 JSONL files, run all GPU jobs in one container, write output JSON files.
     Set SMOKE_TEST=true for a quick 9-question test run.
     """
     import os
@@ -239,25 +223,21 @@ def run_all_jobs():
 
     print(f"Loaded {len(all_questions)} questions. Sending to Modal...")
 
-    print("\n[1/3] Running Mistral-7B-Instruct inference...")
     os.makedirs("results", exist_ok=True)
 
-    inference_results = run_inference.remote(all_questions)
-    with open("results/mistral_inference_results.json", "w") as f:
+    inference_results, hidden_states_results, logit_lens_results = run_all.remote(all_questions)
+
+    with open("results/qwen_inference_results.json", "w") as f:
         json.dump(inference_results, f, indent=2)
-    print(f"  Wrote results/mistral_inference_results.json ({len(inference_results)} entries)")
+    print(f"Wrote results/qwen_inference_results.json ({len(inference_results)} entries)")
 
-    print("\n[2/3] Running hidden states extraction...")
-    hidden_states_results = run_hidden_states.remote(all_questions)
-    with open("results/mistral_hidden_states.json", "w") as f:
+    with open("results/qwen_hidden_states.json", "w") as f:
         json.dump(hidden_states_results, f, indent=2)
-    print(f"  Wrote results/mistral_hidden_states.json ({len(hidden_states_results)} entries)")
+    print(f"Wrote results/qwen_hidden_states.json ({len(hidden_states_results)} entries)")
 
-    print("\n[3/3] Running logit lens...")
-    logit_lens_results = run_logit_lens.remote(all_questions)
-    with open("results/mistral_logit_lens_results.json", "w") as f:
+    with open("results/qwen_logit_lens_results.json", "w") as f:
         json.dump(logit_lens_results, f, indent=2)
-    print(f"  Wrote results/mistral_logit_lens_results.json ({len(logit_lens_results)} entries)")
+    print(f"Wrote results/qwen_logit_lens_results.json ({len(logit_lens_results)} entries)")
 
     print("\nDone. All output files written locally.")
     if SMOKE_TEST:
