@@ -1,2 +1,7 @@
+# Environment and secrets (never commit)
+.env
+.env.*
+!.env.example
+
 # Large output files (exceed GitHub 100MB limit)
 *_hidden_states.json
