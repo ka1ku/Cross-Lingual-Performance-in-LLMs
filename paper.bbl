@@ -1,0 +1,68 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ahuja et~al.(2023)Ahuja, Diddee, Hada, Ochieng, Ramesh, Jain, Nambi, Ganu, Segal, Ahmed, Bali, and Sitaram]{ahuja2023mega}
+K.~Ahuja, H.~Diddee, R.~Hada, M.~Ochieng, K.~Ramesh, P.~Jain, A.~Nambi, T.~Ganu, S.~Segal, M.~Ahmed, K.~Bali, and S.~Sitaram.
+\newblock {MEGA}: Multilingual evaluation of generative {AI}.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}, pages 4232--4267. Association for Computational Linguistics, 2023.
+
+\bibitem[Chen et~al.(2025)]{mmluprox2025}
+W.~Chen et~al.
+\newblock {MMLU-ProX}: A multilingual benchmark for advanced {LLM} evaluation.
+\newblock \emph{arXiv preprint arXiv:2503.10497}, 2025.
+
+\bibitem[Din et~al.(2023)Din, Karidi, Choshen, and Geva]{din2023jump}
+A.~Din, T.~Karidi, L.~Choshen, and M.~Geva.
+\newblock Jump to conclusions: Short-cutting transformers with linear transformations.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}. Association for Computational Linguistics, 2023.
+
+\bibitem[Hendrycks et~al.(2020)Hendrycks, Burns, Basart, Zou, Mazeika, Song, and Steinhardt]{hendrycks2020measuring}
+D.~Hendrycks, C.~Burns, S.~Basart, A.~Zou, M.~Mazeika, D.~Song, and J.~Steinhardt.
+\newblock Measuring massive multitask language understanding.
+\newblock \emph{arXiv preprint arXiv:2009.03300}, 2020.
+
+\bibitem[Huang et~al.(2023)Huang, Tran, and Stanovsky]{huang2023not}
+K.~Huang, L.~Tran, and G.~Stanovsky.
+\newblock Not all languages are created (tokenized) equal.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}. Association for Computational Linguistics, 2023.
+
+\bibitem[Kargaran et~al.(2024)Kargaran, Imani, Yvon, and Sch{\"u}tze]{mexa2024}
+A.~H. Kargaran, A.~Imani, F.~Yvon, and H.~Sch{\"u}tze.
+\newblock {Mexa}: Crosslingual evaluation of {English}-centric {LLMs} via cross-lingual alignment.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing}. Association for Computational Linguistics, 2024.
+
+\bibitem[Kornblith et~al.(2019)Kornblith, Norouzi, Lee, and Hinton]{kornblith2019similarity}
+S.~Kornblith, M.~Norouzi, H.~Lee, and G.~Hinton.
+\newblock Similarity of neural network representations revisited.
+\newblock In \emph{Proceedings of the 36th International Conference on Machine Learning}, 2019.
+
+\bibitem[Kriegeskorte et~al.(2008)Kriegeskorte, Mur, and Bandettini]{kriegeskorte2008representational}
+N.~Kriegeskorte, M.~Mur, and P.~A. Bandettini.
+\newblock Representational similarity analysis---connecting the branches of systems neuroscience.
+\newblock \emph{Frontiers in Systems Neuroscience}, 2:\penalty0 4, 2008.
+
+\bibitem[nostalgebraist(2020)]{nostalgebraist2020logitlens}
+nostalgebraist.
+\newblock Interpreting {GPT}: the logit lens.
+\newblock \url{https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens}, 2020.
+
+\bibitem[Romanou et~al.(2024)Romanou, Foroutan, Sotnikova, Chen, Nelaturu, Singh, Maheshwary, Altomare, Haggag, Amayuelas, et~al.]{include2024}
+A.~Romanou, N.~Foroutan, A.~Sotnikova, Z.~Chen, S.~H. Nelaturu, S.~Singh, R.~Maheshwary, A.~Altomare, M.~A. Haggag, A.~Amayuelas, et~al.
+\newblock {INCLUDE}: Evaluating multilingual language models across {44} languages.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing}. Association for Computational Linguistics, 2024.
+
+\bibitem[Tang et~al.(2024)Tang, Luo, Huang, Zhang, Wang, Zhao, Wei, and Wen]{tang2024language}
+T.~Tang, W.~Luo, H.~Huang, G.~Zhang, X.~Wang, W.~X. Zhao, F.~Wei, and J.-R. Wen.
+\newblock Language-specific neurons: The key to multilingual capabilities in large language models.
+\newblock \emph{arXiv preprint arXiv:2402.16438}, 2024.
+
+\bibitem[Wendler et~al.(2024)Wendler, Veselovsky, Monea, and West]{wendler2024llamas}
+C.~Wendler, V.~Veselovsky, G.~Monea, and R.~West.
+\newblock Do {Llamas} work in {English}? on the latent language of multilingual transformers.
+\newblock \emph{arXiv preprint arXiv:2402.10588}, 2024.
+
+\end{thebibliography}
