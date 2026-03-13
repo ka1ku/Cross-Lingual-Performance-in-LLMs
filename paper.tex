@@ -87,22 +87,7 @@ by task category and language pair.
 \section{Introduction}
 %% ============================================================
 
-The rapid deployment of large language models (LLMs) in multilingual settings has
-outpaced our understanding of how these models process non-English content
-\citep{ahuja2023mega, huang2023not}. While models such as Mistral-7B and Qwen2-7B
-are widely used across dozens of languages, they are trained on corpora that are
-heavily weighted toward English. This creates an empirical gap: we know behavioral
-accuracy often drops for non-English inputs, but the mechanistic story---\emph{why}
-and \emph{how} does processing fail, and at what layer?---remains largely unexplored.
-
-A central hypothesis in the field is that instruction-tuned multilingual LLMs engage
-in \emph{implicit internal translation}: when given a non-English input, the model
-maps it to an internal English-like representation before computing an answer, then
-(in theory) projects back to the target language for output
-\citep{wendler2024llamas, tang2024language}. This hypothesis has important
-implications for fairness and reliability---if a model cannot construct the
-intermediate representation for a low-resource language like Basque, it may tokenize
-the input successfully yet fail to process it meaningfully.
+LLMs are deployed multilingually but trained heavily on English \citep{ahuja2023mega}; accuracy often drops for non-English inputs, yet \emph{why} and \emph{how} processing fails across layers remains unclear. A central hypothesis is \emph{implicit internal translation}: non-English input is mapped to an internal representation before an answer is computed \citep{wendler2024llamas}. For low-resource languages like Basque, models may tokenize but fail to process meaningfully.
 
 Our work investigates two complementary questions:
 \begin{enumerate}[leftmargin=*,itemsep=0pt]
@@ -114,67 +99,20 @@ Our work investigates two complementary questions:
   (logit lens)?
 \end{enumerate}
 
-We construct a 180-question benchmark of aligned triplets
-(English / Spanish / Basque), run two 7B models on GPU via Modal with full hidden-state
-extraction at every layer, and present a joint behavioral + mechanistic analysis. Our
-key contributions are:
-\begin{enumerate}[leftmargin=*,itemsep=0pt]
-  \item A lightweight multilingual benchmark covering three languages and three task
-  categories, with LLM-as-judge evaluation (GPT-4o-mini / Grok-3-mini).
-  \item Logit lens trajectories showing that math answers emerge at shallow layers
-  independent of language, while Basque factual representations fail to converge even
-  by the final layer.
-  \item RSA analysis providing evidence for implicit translation in reasoning tasks:
-  English-Spanish representations converge in middle layers before diverging at output.
-  \item A cross-model comparison showing that Mistral and Qwen2 develop qualitatively
-  different internal representations for multilingual content, even when overall
-  accuracy is similar.
-\end{enumerate}
+We build a 180-question aligned benchmark (EN/ES/Basque), run two 7B models with full hidden-state extraction, and combine black-box accuracy with logit lens and RSA. Contributions: (1) a lightweight multilingual benchmark with LLM-as-judge evaluation; (2) logit lens showing math language-agnostic at shallow layers and Basque factual failing to converge; (3) RSA evidence for implicit translation (EN--ES reasoning peaks mid-layer then declines); (4) cross-model comparison showing Mistral vs.\ Qwen2 use different multilingual representational strategies.
 
 %% ============================================================
 \section{Related Work}
 %% ============================================================
 
 \paragraph{Multilingual LLM benchmarks.}
-Most established benchmarks for LLM evaluation are English-centric, with multilingual
-variants often constructed via translation rather than native composition
-\citep{hendrycks2020measuring}. Recent efforts such as INCLUDE \citep{include2024}
-and MMLU-ProX \citep{mmluprox2025} evaluate LLMs across dozens of languages but focus
-on behavioral accuracy rather than internal representations. Our benchmark is smaller
-but paired with white-box probing, allowing mechanistic interpretation of behavioral gaps.
+Benchmarks remain English-centric \citep{hendrycks2020measuring}; INCLUDE \citep{include2024} and other work add many languages but focus on accuracy, not internal representations. We pair a small benchmark with white-box probing for mechanistic interpretation.
 
-\paragraph{Cross-lingual generalization.}
-\citet{ahuja2023mega} conduct a large-scale multilingual evaluation across 16 models
-and 70 languages, finding consistent degradation for low-resource languages.
-\citet{mexa2024} introduce Mexa, measuring alignment between English and non-English
-representations in pre-trained models. We build on this direction by analyzing
-alignment at every layer of the residual stream and connecting it to task-specific
-behavioral accuracy.
+\paragraph{Cross-lingual generalization \& implicit translation.}
+\citet{ahuja2023mega} find consistent low-resource degradation; \citet{wendler2024llamas} argue for English-centric latent spaces. We analyze alignment at every layer and link it to task-specific accuracy; RSA shows mid-layer peaks for reasoning consistent with implicit translation.
 
-\paragraph{Implicit translation hypothesis.}
-\citet{wendler2024llamas} provide evidence that LLaMA models internally represent
-non-English tokens via English-centric latent spaces using logit lens probing.
-\citet{tang2024language} study language-agnostic and language-specific neurons in
-multilingual transformers. Our RSA-based analysis provides complementary evidence
-that cross-lingual representational structure peaks at intermediate depths,
-specifically for reasoning tasks, consistent with a mid-layer implicit translation
-stage.
-
-\paragraph{Logit lens and residual stream analysis.}
-The logit lens technique \citep{nostalgebraist2020logitlens} projects intermediate
-hidden states through the final layer norm and language model head to decode what
-the model ``predicts'' at each layer. \citet{din2023jump} apply it to study
-factual association retrieval. We extend this approach to a multilingual setting,
-comparing ground-truth token rank trajectories across three languages and two models
-with different vocabulary sizes.
-
-\paragraph{Representational Similarity Analysis.}
-RSA \citep{kriegeskorte2008representational}, originally from computational
-neuroscience, has been applied to compare representational geometry across neural
-network layers and models \citep{kornblith2019similarity}. We use layer-wise RSA to
-measure how much the \emph{relational structure} among questions is shared across
-languages---a more nuanced probe than direct vector similarity, since it measures
-whether the model treats analogous question pairs as analogously (dis)similar.
+\paragraph{Logit lens \& RSA.}
+The logit lens \citep{nostalgebraist2020logitlens} decodes layer-wise ``predictions''; RSA \citep{kriegeskorte2008representational} compares representational geometry. We apply both multilingually: GT rank and confidence by layer, and layer-wise RSA for relational structure across languages.
 
 %% ============================================================
 \section{Experimental Design}
@@ -197,6 +135,35 @@ answer. Questions are split into three categories (20 questions each per languag
   Requires structural inference; we hypothesize reasoning structure may be shared
   cross-lingually in intermediate layers.
 \end{itemize}
+
+Table~\ref{tab:benchmark_examples} shows one aligned triplet per task: the same item in English, Spanish, and Basque with shared ground-truth answers.
+
+\begin{table}[H]
+\centering
+\caption{Example benchmark questions by language and task (aligned triplets share the same ground-truth answer).}
+\label{tab:benchmark_examples}
+\small
+\begin{tabular}{@{}l p{3.6cm} p{3.6cm} p{3.8cm} @{}}
+\toprule
+\textbf{Language} & \textbf{Math} & \textbf{Factual} & \textbf{Reasoning} \\
+\midrule
+English
+  & Question: What is the sum of 15 and 27? Answer: 42
+  & Question: What is the capital of France? Answer: Paris
+  & Question: A is taller than B, and B is taller than C. Who is the shortest? Answer: C \\
+\addlinespace
+Spanish
+  & Question: ¿Cuál es la suma de 15 y 27? Answer: 42
+  & Question: ¿Cuál es la capital de Francia? Answer: París
+  & Question: A es más alto que B, y B es más alto que C. ¿Quién es el más bajo? Answer: C \\
+\addlinespace
+Basque
+  & Question: 15 eta 27 ren batura zer da? Answer: 42
+  & Question: Frantziako hiriburua zein da? Answer: Paris
+  & Question: A, B baino altuagoa da, eta B, C baino altuagoa. Nor da baxuena? Answer: C \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 We selected a three-language gradient to span high-resource (English), medium-resource
 (Spanish, Indo-European), and low-resource (Basque, language isolate with no close
@@ -221,48 +188,14 @@ accuracy and all white-box probing, avoiding the cross-model confound present in
 our early-phase experiments where we used GPT-3.5-turbo and Gemini for inference but
 BLOOM-560M for probing.
 
-\subsection{Black-Box Evaluation}
+\subsection{Black-Box, Logit Lens, and RSA}
 \label{sec:blackbox}
 
-For each of the 180 questions, we record the model's free-form generation. Answers
-are evaluated using an LLM-as-judge framework: we submit each (ground truth, model
-answer) pair to GPT-4o-mini (with Grok-3-mini as fallback) with a binary YES/NO
-prompt. Results are cached in \texttt{*\_accuracy\_cache.json} to ensure
-reproducibility. Accuracy is aggregated by language and category.
+\textbf{Black-box:} We record free-form generations for all 180 questions and score with an LLM-as-judge (GPT-4o-mini / Grok-3-mini, binary YES/NO); results cached for reproducibility.
 
-\subsection{Logit Lens}
-\label{sec:logitlens}
+\textbf{Logit lens:} At each layer $\ell$, we project last-token $\mathbf{h}^{(\ell)}$ through final LayerNorm and LM head to get $p^{(\ell)} = \text{softmax}(W_{\text{lm}} \cdot \text{LayerNorm}(\mathbf{h}^{(\ell)}))$. We record GT rank (rank of first ground-truth token in $p^{(\ell)}$) and top-1 confidence $\max_t p^{(\ell)}_t$.
 
-At each of the 32 (Mistral) or 28 (Qwen2) layers, we project the last-token hidden
-state $\mathbf{h}^{(\ell)}$ through the final layer normalization and the language
-model head $W_{\text{lm}}$, then apply softmax:
-\[
-  p^{(\ell)} = \text{softmax}(W_{\text{lm}} \cdot \text{LayerNorm}(\mathbf{h}^{(\ell)})).
-\]
-We record two metrics per question per layer:
-\begin{itemize}[leftmargin=*,itemsep=1pt]
-  \item \textbf{Ground-truth rank (GT rank):} The rank of the first ground-truth answer
-  token in $p^{(\ell)}$ (lower is better; rank 1 means the model already ``points at''
-  the correct answer).
-  \item \textbf{Top-1 confidence:} $\max_t p^{(\ell)}_t$, indicating how decisive the
-  model is at each layer.
-\end{itemize}
-
-\subsection{Representational Similarity Analysis (RSA)}
-\label{sec:rsa}
-
-For each (language, category) group of 20 questions, we extract the last-token
-residual stream vector $\mathbf{h}^{(\ell)}_i \in \mathbb{R}^{d_\text{model}}$ at
-each layer $\ell$ with \texttt{output\_hidden\_states=True}, skipping the embedding
-layer. We then build a $20 \times 20$ Representational Dissimilarity Matrix (RDM):
-\[
-  \text{RDM}^{(\ell)}_{ij} = 1 - \cos(\mathbf{h}^{(\ell)}_i, \mathbf{h}^{(\ell)}_j).
-\]
-For each language pair $(\mathcal{L}_1, \mathcal{L}_2)$ and each category, we
-compute the Spearman rank correlation between $\text{RDM}^{(\ell)}_{\mathcal{L}_1}$
-and $\text{RDM}^{(\ell)}_{\mathcal{L}_2}$ at every layer, yielding a
-cross-lingual alignment curve. A high correlation indicates that the model
-organizes the relational structure among questions similarly for both languages.
+\textbf{RSA:} For each (language, category) we extract last-token residual vectors at every layer and build $20{\times}20$ RDMs: $\text{RDM}^{(\ell)}_{ij} = 1 - \cos(\mathbf{h}^{(\ell)}_i, \mathbf{h}^{(\ell)}_j)$. We compute Spearman $r$ between RDMs for each language pair at each layer; high $r$ means similar relational structure across languages.
 
 %% ============================================================
 \section{Results}
@@ -308,23 +241,9 @@ all categories.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/fig1_accuracy_heatmap.png}
-\caption{Accuracy heatmaps for Mistral-7B (left) and Qwen2-7B (right). Rows are
-languages, columns are task categories. Qwen2-7B's advantage is most dramatic on
-Basque, particularly for math (65\% vs.\ 20\%) and factual (30\% vs.\ 0\%). Both
-models achieve 100\% English factual accuracy.}
+\caption{Accuracy by language and category (Mistral left, Qwen2 right). Qwen2 much stronger on Basque; both 100\% English factual.}
 \label{fig:accuracy_heatmap}
 \end{figure}
-
-Several patterns stand out. First, \textbf{Basque causes dramatic collapse for
-Mistral}: 8\% overall accuracy and 0\% factual accuracy, compared to 68\% and 100\%
-for English. Spanish is intermediate (62\% overall), roughly commensurate with its
-training data representation. Second, \textbf{Qwen2 is substantially more multilingual
-for Basque}: 37\% overall (vs.\ 8\% for Mistral), and 65\% Basque math (vs.\ 20\%).
-This likely reflects Qwen2's larger and more multilingual training corpus, though exact
-composition is not publicly disclosed. Third, \textbf{factual knowledge is the most
-vulnerable category for low-resource languages}: both models achieve 0--30\% Basque
-factual accuracy, whereas Basque math achieves 20--65\%. The concrete numerical nature
-of math problems provides a partial hedge against language-specific knowledge gaps.
 
 \subsection{Logit Lens: Layer-by-Layer Prediction Trajectories}
 \label{sec:results_logitlens}
@@ -361,55 +280,16 @@ is better) and mean top-1 confidence at layers 1 and 32.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/fig2_gt_rank_both_models.png}
-\caption{Mean ground-truth token rank as a function of normalized layer depth, for all
-languages and categories, for Mistral-7B (top row) and Qwen2-7B (bottom row). Lower
-rank is better. The Basque factual curve remains elevated throughout all layers in
-Mistral, while Qwen2 shows improved convergence. Note Qwen2's higher absolute ranks
-reflect its larger vocabulary (152K tokens).}
+\caption{Mean GT rank vs.\ normalized layer (Mistral top, Qwen2 bottom). Basque factual stays elevated in Mistral; Qwen2's larger vocab yields higher absolute ranks.}
 \label{fig:gt_rank}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/fig3_confidence_both_models.png}
-\caption{Mean top-1 token probability (confidence) as a function of layer, for both
-models. All languages converge to near-zero confidence in early layers (uniform
-distribution over vocabulary), then sharply increase in later layers.
-Basque reasoning maintains the lowest final-layer confidence for Mistral (53.9\%),
-consistent with its 5\% accuracy.}
+\caption{Mean top-1 confidence vs.\ layer. Basque reasoning has lowest final confidence (Mistral), consistent with 5\% accuracy.}
 \label{fig:confidence}
 \end{figure}
-
-Three key findings emerge from Table~\ref{tab:logitlens} and Figures~\ref{fig:gt_rank}
-and~\ref{fig:confidence}:
-
-\paragraph{Finding 1: Math is language-agnostic in early layers.}
-Basque math has a \emph{lower} mean GT rank at layer 1 (339) than English (1,160) or
-Spanish (1,143), meaning the model already gestures toward the correct answer earlier
-in Basque math than in English math. This is counterintuitive given Basque's low
-accuracy, but it makes sense: math answers are numerals, which tokenize identically
-regardless of surrounding language. The early residual stream quickly identifies
-numeric answer tokens based on the question's arithmetic structure alone. By layer 32,
-Basque math reaches GT rank 62 with 70.3\% confidence---reasonable, though still
-below English (rank 261, 94.2\%) and Spanish (rank 452, 81.0\%).
-
-\paragraph{Finding 2: Basque factual representations fail to converge.}
-English factual questions reach a mean GT rank of 26 at layer 32---the model is
-essentially pointing directly at the correct answer token. Spanish factual rank (219)
-is 8$\times$ worse; Basque factual rank (2,440) is 94$\times$ worse and effectively
-random. This catastrophic failure---with the model failing to place the correct answer
-within the top 2,440 tokens of the distribution---mirrors the 0\% behavioral accuracy
-and confirms that the Basque factual failure is not a generation-time artifact but is
-present in the model's internal representation. Notably, Basque factual \emph{confidence}
-remains high (84.8\% at L32) despite the catastrophic rank, indicating the model is
-``decisive but wrong''---it confidently predicts a token, but not the correct one.
-
-\paragraph{Finding 3: Reasoning confidence reveals ``undecided'' processing.}
-Basque reasoning top-1 confidence at layer 32 is only 53.9\%, far below English
-(87.0\%) and Spanish (68.8\%). Unlike Basque factual---which is decisive but
-wrong---Basque reasoning produces diffuse output distributions, consistent with the
-model failing to arrive at any coherent answer. This matches the 5\% behavioral
-accuracy.
 
 \subsection{RSA: Cross-Lingual Representational Alignment}
 \label{sec:results_rsa}
@@ -444,72 +324,16 @@ Bold: highest correlation per row. Underline: negative (anti-correlated) values.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/fig4_rsa_both_models.png}
-\caption{RSA Spearman $r$ curves across all layers, for Mistral-7B (top) and
-Qwen2-7B (bottom), for each language pair and task category. The mid-layer peak for
-EN--ES reasoning is clearly visible in Mistral (top center). Qwen2 generally shows
-lower and noisier RSA values, despite its higher Basque accuracy.}
+\caption{RSA $r$ by layer (Mistral top, Qwen2 bottom). EN--ES reasoning mid-layer peak visible in Mistral; Qwen2 has lower RSA despite higher Basque accuracy.}
 \label{fig:rsa_curves}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/fig5_rsa_final_layer_heatmap.png}
-\caption{RSA Spearman $r$ at the final layer for all language pairs and categories
-(Mistral left, Qwen2 right). The EN--EU factual cell is near zero or negative for
-both models, while EN--ES math maintains the highest alignment.}
+\caption{Final-layer RSA $r$ (Mistral left, Qwen2 right). EN--EU factual near zero/negative; EN--ES math highest.}
 \label{fig:rsa_heatmap}
 \end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{figures/fig6_basque_gap.png}
-\caption{EN--EU vs.\ EN--ES RSA gap by layer, for each task category (Mistral-7B).
-Shaded region marks the gap between the two curves. The gap is largest for factual and
-reasoning, where Basque representations diverge from English while Spanish remains
-aligned.}
-\label{fig:basque_gap}
-\end{figure}
-
-Table~\ref{tab:rsa} and Figures~\ref{fig:rsa_curves}--\ref{fig:basque_gap} reveal
-four findings:
-
-\paragraph{Finding 4: Math has the strongest and most durable cross-lingual alignment.}
-EN--ES math RSA begins at $r = 0.906$ at layer 1 and remains at $r = 0.785$ at layer
-32---the highest final-layer correlation across all categories and language pairs. Even
-EN--EU math maintains a positive correlation (0.389) through all 32 layers, despite
-Basque's very different surface form. This indicates that the model internally organizes
-math questions by their mathematical structure (the operations, magnitudes, and
-expected answer types) rather than by the language they are written in---a form of
-language-agnostic representational geometry for arithmetic content.
-
-\paragraph{Finding 5: Basque-English factual alignment becomes structurally random.}
-The EN--EU factual RSA drops from 0.508 at layer 1 to $-$0.049 at layer 32,
-statistically indistinguishable from zero and occasionally anti-correlated. The
-relational structure among Basque factual questions has no correspondence to the
-structure among the same questions in English. We interpret this as the model
-treating Basque factual content as noise: it tokenizes the input but does not route it
-through the factual knowledge retrieval circuits it uses for English. The model's
-representation of ``which Basque questions are similar'' has no alignment with which
-English questions are similar.
-
-\paragraph{Finding 6: Reasoning EN--ES peaks in mid-layers---evidence for implicit translation.}
-The EN--ES reasoning RSA rises from 0.394 at layer 1 to a peak of 0.810 at layer 8,
-then declines to 0.558 at layer 32. This non-monotonic mid-layer peak is not present
-in math (which is high throughout) or factual (which is high in early-to-mid layers
-and stays elevated). The peak-then-decline pattern is consistent with an implicit
-translation mechanism: the model first maps both English and Spanish reasoning
-problems to a shared internal representation (mid-layers), then resolves the answer
-in a language-specific way at the output stage (late layers). The mid-layer peak
-implies the model's reasoning machinery is cross-lingual, even though its output
-generation is not.
-
-\paragraph{Finding 7: Early layers show language-agnostic structure even for Basque.}
-Despite Basque factual representations collapsing by layer 32, the layer-1 RSA for
-EN--EU factual (0.508) and EN--EU reasoning (0.303) are moderate---higher than
-expected for a near-random language. We attribute this to the earliest transformer
-layers extracting surface-level features (BPE subword overlap, positional encodings,
-character-level n-grams) that are partially shared across languages before the
-model's language-specific processing diverges in middle and final layers.
 
 \subsection{Cross-Model Comparison}
 \label{sec:results_cross_model}
@@ -546,115 +370,38 @@ multilingual representations.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/fig7_cross_model_gt_rank.png}
-\caption{Cross-model GT rank trajectories for each language and category. Mistral-7B
-(solid) and Qwen2-7B (dashed) are overlaid. Qwen2's higher absolute rank values
-reflect its larger vocabulary (152K vs.\ 32K), making direct rank comparison
-across models uninformative; the trajectory \emph{shapes} are more comparable.}
+\caption{GT rank trajectories: Mistral (solid), Qwen2 (dashed). Trajectory shapes comparable; Qwen2's larger vocab inflates absolute ranks.}
 \label{fig:cross_model}
 \end{figure}
-
-Table~\ref{tab:rsa_comparison} reveals a striking dissociation: Qwen2 achieves far
-better Basque accuracy (37\% vs.\ 8\%), yet Mistral shows consistently \emph{higher}
-EN--ES RSA at the final layer across all categories (e.g., math: 0.785 vs.\ 0.470;
-reasoning: 0.558 vs.\ 0.196). Simultaneously, Qwen2 shows better EN--EU and ES--EU
-RSA for factual and reasoning, consistent with its greater Basque ability.
-
-This dissociation---better Basque accuracy but less English-Spanish alignment---suggests
-the two models employ qualitatively different strategies for multilingual processing.
-Mistral appears to develop strong cross-lingual representational alignment between
-English and Spanish (two similar Indo-European languages) but has nearly no usable
-representation for Basque. Qwen2, by contrast, seems to develop a more uniformly
-multilingual representational space that provides some handle on Basque but does not
-show as strong English-Spanish convergence. This is consistent with Qwen2's training
-data including more diverse multilingual content, which may prevent over-specialization
-toward the English-Spanish axis.
 
 %% ============================================================
 \section{Discussion}
 %% ============================================================
 
-\paragraph{The Basque wall.}
-Both models show a stark performance discontinuity between Spanish and Basque. For
-Mistral, this discontinuity is both behavioral (60\% $\to$ 8\%) and mechanistic
-(EN--EU factual RSA 0.782 $\to$ $-$0.049). Basque is a language isolate: it shares
-no common ancestor with Indo-European languages, has unique morphological structure,
-and is almost certainly underrepresented in both models' training corpora. Our results
-suggest that below a critical training data threshold, a model may tokenize a language
-without meaningfully processing it---producing confident, wrong answers for factual
-questions, or diffuse, uncertain outputs for reasoning.
+\paragraph{Black-box accuracy and the Basque collapse.}
+Mistral collapses on Basque (8\% overall, 0\% factual) while Qwen2 is far more robust (37\% overall, 65\% Basque math). Factual knowledge is the most vulnerable for low-resource languages; math's numerical answers partially hedge against language-specific gaps. Basque shows a stark discontinuity (e.g., Mistral 60\% $\to$ 8\%; EN--EU factual RSA $\to$ $-$0.049). Below a critical training-data threshold, models may tokenize without meaningfully processing.
 
-\paragraph{Math as a language-agnostic domain.}
-Across all analyses, math exhibits the weakest language dependence: the best early-layer
-GT ranks (Basque math, layer 1), the highest EN--EU RSA at the final layer (0.389 for
-Mistral), and the smallest accuracy gap between English and Spanish (45\% vs.\ 50\%
-for Mistral). We attribute this to the symbolic nature of mathematical answers: the
-model can identify the correct numeric token from the structure of the problem
-regardless of which language the problem is posed in, because the answer token itself
-is language-invariant. This suggests that tasks with language-invariant answer spaces
-may be more robust to multilingual generalization gaps.
+\paragraph{Logit lens.}
+Math is language-agnostic in early layers: Basque math has \emph{lower} GT rank at L1 (339) than EN/ES ($\sim$1,150) because numerals tokenize identically. Basque factual fails to converge---GT rank 2,440 at L32 vs.\ 26 for English---mirroring 0\% accuracy and showing ``decisive but wrong'' internal predictions. Basque reasoning has the lowest final-layer confidence (53.9\%), consistent with diffuse, incoherent processing. Math is the most language-agnostic across analyses (best early GT ranks, highest EN--EU RSA), as numeric answers are language-invariant.
 
-\paragraph{The implicit translation hypothesis.}
-The RSA mid-layer peak for EN--ES reasoning ($r = 0.394$ at L1, $r = 0.810$ at L8,
-$r = 0.558$ at L32) provides the clearest mechanistic evidence for implicit translation
-in our data. The interpretation is that the model first constructs distinct per-language
-representations (early layers), then converges to a shared reasoning representation
-in middle layers---where the structural problem (``who arrives first?'', ``which
-number is odd?'') is solved in a language-agnostic way---and finally resolves the
-answer token in a language-specific output format. The decline from L8 to L32 reflects
-the output-side language specificity, not a failure of cross-lingual understanding.
+\paragraph{RSA and implicit translation.}
+Math shows the strongest cross-lingual alignment (EN--ES $r = 0.785$ at L32; EN--EU stays positive at 0.389). EN--EU factual RSA collapses to $-$0.049 at L32---structurally random---consistent with Basque factual content being tokenized but not routed through English-style knowledge circuits. EN--ES \emph{reasoning} RSA peaks at L8 ($r = 0.810$) then declines to 0.558 at L32, supporting implicit translation: shared mid-layer representation, then language-specific output. Early layers show moderate Basque alignment (L1 EN--EU factual 0.508) from surface features before language-specific divergence.
 
-This finding raises a natural question: why does the mid-layer peak appear for
-reasoning but not math? Math does not require this convergence because its answer
-tokens are already language-agnostic; the model can output the numeric token directly
-from any language's representation. Factual questions, by contrast, depend on knowledge
-that is represented in a language-specific way in the training corpus, so the model
-cannot converge to a shared intermediate representation---and for Basque, there is no
-intermediate representation to converge to at all.
-
-\paragraph{Model architecture and the RSA paradox.}
-Qwen2's larger vocabulary (152K tokens) implies a fundamentally different token-level
-representation for the same text compared to Mistral (32K tokens). Basque words that
-were split into many subwords by Mistral's tokenizer may be represented as single
-tokens in Qwen2's larger vocabulary, improving its ability to process Basque inputs.
-This tokenization advantage is a plausible explanation for Qwen2's dramatic Basque
-accuracy improvement (particularly for math, where the correct answer---a numeral---may
-benefit from consistent tokenization). However, the RSA results suggest that this
-improved Basque processing does not come via stronger English-Spanish alignment;
-rather, Qwen2 may process each language more independently, forgoing the strong
-EN--ES cross-lingual structure that Mistral develops.
+\paragraph{Cross-model dissociation.}
+Qwen2 achieves better Basque accuracy (37\% vs.\ 8\%) but \emph{lower} EN--ES RSA than Mistral (e.g., reasoning 0.196 vs.\ 0.558). The dissociation suggests different multilingual strategies: Mistral aligns EN--ES strongly but has little usable Basque representation; Qwen2's more uniform multilingual space supports Basque at the cost of weaker EN--ES convergence. Qwen2's larger vocabulary (152K vs.\ 32K) may help Basque tokenization and accuracy without strengthening EN--ES alignment.
 
 \paragraph{Limitations.}
-Our benchmark is small (20 questions per language-category cell), limiting statistical
-power. The LLM-as-judge evaluation may introduce systematic biases, particularly for
-Basque, where the judge may have limited ability to evaluate non-English answers.
-Basque translations were produced by GPT-4, which may have introduced subtle errors.
-We evaluate only two model families at the 7B scale; results may differ for larger
-models or models with explicit multilingual training objectives. Finally, our RSA
-analysis uses the last-token hidden state, which may not capture all relevant
-information in autoregressive transformers.
+Small benchmark (20 per cell), LLM-as-judge bias risk, two 7B models only; RSA uses last-token only.
 
 %% ============================================================
 \section{Conclusion}
 %% ============================================================
 
-We present a joint behavioral and mechanistic analysis of cross-lingual generalization
-in Mistral-7B and Qwen2-7B across English, Spanish, and Basque. Our results show
-that cross-lingual performance gaps are not surface-level artifacts but are reflected
-in the structure of residual stream representations at every layer. Basque factual
-representations become structurally random by the final layer in Mistral, while
-math representations maintain positive cross-lingual alignment even for Basque.
-Mid-layer RSA peaks for English-Spanish reasoning provide evidence for an implicit
-translation stage in the residual stream. Qwen2 is substantially more robust for
-Basque but achieves this via different internal representations than Mistral, suggesting
-that multilingual robustness can arise through different mechanistic routes.
+We presented a joint behavioral and mechanistic evaluation of cross-lingual generalization in two 7B instruction-tuned models, Mistral-7B and Qwen2-7B, over a 180-question benchmark in English, Spanish, and Basque. By combining black-box accuracy with logit lens and Representational Similarity Analysis at every layer, we showed that performance gaps are not merely surface-level but are reflected in the structure of the residual stream.
 
-Our work contributes to the growing literature on multilingual interpretability and
-suggests that layer-wise RSA is a useful tool for characterizing \emph{where} and
-\emph{how} cross-lingual generalization fails or succeeds. Future directions include
-activation patching---substituting English or Spanish residual streams into Basque
-forward passes to test whether improved representations improve Basque accuracy---and
-scaling to a larger benchmark with statistical power sufficient to isolate individual
-question difficulty from language-level trends.
+Our main findings are threefold. First, low-resource language support varies sharply by model and task: Mistral collapses on Basque (8\% overall, 0\% factual) while Qwen2 remains substantially more robust (37\% overall), and factual knowledge is the most vulnerable category. Second, layer-wise probing reveals where this failure occurs: math answers are identified at shallow layers regardless of language (and Basque math can even show better early GT rank than English), whereas Basque factual representations fail to converge by the final layer---the model is ``decisive but wrong.'' Third, RSA provides evidence for implicit translation in reasoning: English--Spanish representational similarity peaks in mid-layers (e.g., $r = 0.81$ at layer 8) then declines at the output, consistent with a shared internal reasoning stage followed by language-specific generation. At the same time, the cross-model comparison shows that better Basque accuracy need not coincide with stronger EN--ES alignment; Mistral and Qwen2 appear to adopt different multilingual representational strategies.
+
+These results suggest that layer-wise RSA and logit lens are practical tools for diagnosing \emph{where} and \emph{how} cross-lingual generalization breaks down, with implications for model selection, data curation, and interpretability in multilingual deployment. Future work should extend the benchmark to more languages and larger models, test whether activation patching (e.g., substituting English or Spanish residual streams into Basque forward passes) can improve Basque accuracy, and analyze correct versus incorrect answer trajectories to see whether successful cross-lingual processing shows earlier or stronger representational alignment.
 
 %% ============================================================
 \bibliographystyle{abbrvnat}

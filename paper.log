@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.7)  12 MAR 2026 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.7)  12 MAR 2026 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -513,77 +513,76 @@ LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
  [1
 
-{/Users/jtarquino/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 190.
+{/Users/jtarquino/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 128.
  (/Users/jtarquino/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3]
-<figures/fig1_accuracy_heatmap.png, id=138, 787.2612pt x 298.2342pt>
+)
+Underfull \hbox (badness 1430) in paragraph at lines 161--162
+[]|\OT1/ptm/m/n/9 (+20) Question: 15 eta 27 ren
+ []
+
+[2]
+<figures/fig1_accuracy_heatmap.png, id=102, 787.2612pt x 298.2342pt>
 File: figures/fig1_accuracy_heatmap.png Graphic file (type png)
 <use figures/fig1_accuracy_heatmap.png>
-Package pdftex.def Info: figures/fig1_accuracy_heatmap.png  used on input line 310.
+Package pdftex.def Info: figures/fig1_accuracy_heatmap.png  used on input line 243.
 (pdftex.def)             Requested size: 469.75502pt x 177.9544pt.
- [4]
-<figures/fig2_gt_rank_both_models.png, id=149, 1076.3412pt x 569.0058pt>
+ [3]
+<figures/fig2_gt_rank_both_models.png, id=113, 1076.3412pt x 569.0058pt>
 File: figures/fig2_gt_rank_both_models.png Graphic file (type png)
 <use figures/fig2_gt_rank_both_models.png>
-Package pdftex.def Info: figures/fig2_gt_rank_both_models.png  used on input line 363.
+Package pdftex.def Info: figures/fig2_gt_rank_both_models.png  used on input line 282.
 (pdftex.def)             Requested size: 469.75502pt x 248.34035pt.
- [5 <./figures/fig1_accuracy_heatmap.png>]
-<figures/fig3_confidence_both_models.png, id=157, 1076.3412pt x 498.1812pt>
+ [4 <./figures/fig1_accuracy_heatmap.png>]
+<figures/fig3_confidence_both_models.png, id=120, 1076.3412pt x 498.1812pt>
 File: figures/fig3_confidence_both_models.png Graphic file (type png)
 <use figures/fig3_confidence_both_models.png>
-Package pdftex.def Info: figures/fig3_confidence_both_models.png  used on input line 374.
+Package pdftex.def Info: figures/fig3_confidence_both_models.png  used on input line 289.
 (pdftex.def)             Requested size: 469.75502pt x 217.42921pt.
- [6 <./figures/fig2_gt_rank_both_models.png> <./figures/fig3_confidence_both_models.png>]
-<figures/fig4_rsa_both_models.png, id=169, 1076.3412pt x 569.0058pt>
+ [5 <./figures/fig2_gt_rank_both_models.png> <./figures/fig3_confidence_both_models.png>]
+<figures/fig4_rsa_both_models.png, id=129, 1076.3412pt x 569.0058pt>
 File: figures/fig4_rsa_both_models.png Graphic file (type png)
 <use figures/fig4_rsa_both_models.png>
-Package pdftex.def Info: figures/fig4_rsa_both_models.png  used on input line 446.
+Package pdftex.def Info: figures/fig4_rsa_both_models.png  used on input line 326.
 (pdftex.def)             Requested size: 469.75502pt x 248.34035pt.
- [7]
-<figures/fig5_rsa_final_layer_heatmap.png, id=176, 714.9912pt x 298.2342pt>
+<figures/fig5_rsa_final_layer_heatmap.png, id=130, 714.9912pt x 298.2342pt>
 File: figures/fig5_rsa_final_layer_heatmap.png Graphic file (type png)
 <use figures/fig5_rsa_final_layer_heatmap.png>
-Package pdftex.def Info: figures/fig5_rsa_final_layer_heatmap.png  used on input line 456.
+Package pdftex.def Info: figures/fig5_rsa_final_layer_heatmap.png  used on input line 333.
 (pdftex.def)             Requested size: 469.75502pt x 195.9478pt.
-<figures/fig6_basque_gap.png, id=177, 1076.3412pt x 356.532pt>
-File: figures/fig6_basque_gap.png Graphic file (type png)
-<use figures/fig6_basque_gap.png>
-Package pdftex.def Info: figures/fig6_basque_gap.png  used on input line 465.
-(pdftex.def)             Requested size: 469.75502pt x 155.60698pt.
- [8 <./figures/fig4_rsa_both_models.png> <./figures/fig5_rsa_final_layer_heatmap.png>] [9 <./figures/fig6_basque_gap.png>]
-<figures/fig7_cross_model_gt_rank.png, id=195, 1076.3412pt x 710.655pt>
+ [6 <./figures/fig4_rsa_both_models.png>]
+<figures/fig7_cross_model_gt_rank.png, id=138, 1076.3412pt x 710.655pt>
 File: figures/fig7_cross_model_gt_rank.png Graphic file (type png)
 <use figures/fig7_cross_model_gt_rank.png>
-Package pdftex.def Info: figures/fig7_cross_model_gt_rank.png  used on input line 548.
+Package pdftex.def Info: figures/fig7_cross_model_gt_rank.png  used on input line 372.
 (pdftex.def)             Requested size: 469.75502pt x 310.16258pt.
- [10 <./figures/fig7_cross_model_gt_rank.png>] [11] (./paper.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 49--52
+ [7 <./figures/fig5_rsa_final_layer_heatmap.png>] [8 <./figures/fig7_cross_model_gt_rank.png>] (./paper.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
 []\OT1/ptm/m/n/10 (+20) nostalgebraist.  In-ter-pret-ing GPT: the logit lens.  [][]$\OT1/pcr/m/n/10 https : / / www . lesswrong . com / posts /
  []
 
-[12]) [13] (./paper.aux)
+[9]) [10] (./paper.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 4384D4821F29F173C8D9872154AAC380;2359.
+(rerunfilecheck)             Checksum: 377F2E6CC5E1934867AC1DCE717D000C;2024.
  ) 
 Here is how much of TeX's memory you used:
- 15938 strings out of 469476
- 253333 string characters out of 5467523
- 708102 words of memory out of 5000000
- 44090 multiletter control sequences out of 15000+600000
- 659097 words of font info for 237 fonts, out of 8000000 for 9000
+ 15905 strings out of 469476
+ 252661 string characters out of 5467523
+ 705445 words of memory out of 5000000
+ 44077 multiletter control sequences out of 15000+600000
+ 662214 words of font info for 238 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 75i,12n,79p,1194b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (13 pages, 1597108 bytes).
+ 75i,12n,79p,1194b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/jtarquino/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (10 pages, 1377312 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 42652 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 49287 words of extra memory for PDF output out of 51595 (max. 10000000)
 
